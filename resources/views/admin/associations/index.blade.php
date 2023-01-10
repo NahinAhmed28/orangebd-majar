@@ -20,10 +20,41 @@
                     <div class="m-section__content">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="">
-                                    <div class="table m-table table-responsive">
-{{--                                        @include('common/datatable')--}}
-                                    </div>
+                                <div class="table table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Title EN</th>
+                                                <th>Title BN</th>
+                                                <th>Status</th>
+                                                <th width="100px">Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($associations as $association)
+                                                <tr>
+                                                    <td>{{$association->id}}</td>
+                                                    <td>{{$association->title_en}}</td>
+                                                    <td>{{$association->title_bn}}</td>
+                                                    <td>{{$association->status}}</td>
+
+                                                    <td>
+                                                        <a href="{{ route('admin.association.edit',[$association->id]) }}" title="Edit">
+                                                            <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                            </button></a>
+                                                        <form method="POST" action="{{ route('admin.association.destroy' ,  [$association->id]) }}"
+                                                              accept-charset="UTF-8" style="display:inline">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-danger btn-sm show-alert-delete-box"
+                                                                    title="Delete Association"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
                                 </div>
                             </div>
                         </div>
@@ -34,3 +65,5 @@
     </div>
 
 @endsection
+
+

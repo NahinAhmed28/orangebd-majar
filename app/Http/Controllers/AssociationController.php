@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Association;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+//use Yajra\DataTables\Facades\DataTables;
 
 class AssociationController extends Controller
 {
-//    public $associationModel;
+//    public $model;
 //    protected $redirectUrl;
 //    const moduleDirectory = 'admin.associations.';
 //
 //    public function __construct(Association $association){
 //        $this->redirectUrl = 'admin/associations';
-//        $this->associationModel = $association;
+//        $this->model = $association;
 //
 //    }
     /**
@@ -21,16 +23,20 @@ class AssociationController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+
         $data = [
             'associations' => Association::get()->toQuery()->paginate(5),
             'pageTitle' => 'Association List',
         ];
         return view('admin.associations.index', $data);
 
-
     }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

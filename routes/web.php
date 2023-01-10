@@ -10,6 +10,7 @@ use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\UpazilaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserTypeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,14 +38,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
 
-
-
     Route::resource('association', AssociationController::class);
     Route::resource('center', CenterController::class);
     Route::resource('division', DivisionController::class);
     Route::resource('district', DistrictController::class);
     Route::resource('upazila', UpazilaController::class);
     Route::resource('admin', AdminController::class);
+    Route::resource('userType', UserTypeController::class);
+    Route::resource('user', UserController::class);
+
 });
 
 
