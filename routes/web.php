@@ -19,9 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/app', function () {
-    return view('admin.layouts.app');
-});
 
 Route::get('/dashboard', function () {
     return view('admin.layouts.default');
