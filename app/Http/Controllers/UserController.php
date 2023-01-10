@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Association;
+use App\Models\Center;
+use App\Models\District;
+use App\Models\Division;
+use App\Models\Upazila;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,11 +31,15 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        $data = [
+            'pageTitle' => 'User Create',
+            'centers' =>Center::where('status', 1)->get(),
+        ];
+        return view('admin.users.create', $data);
     }
 
     /**

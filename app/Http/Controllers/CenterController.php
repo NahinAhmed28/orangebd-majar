@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Association;
 use App\Models\Center;
+use App\Models\District;
+use App\Models\Division;
+use App\Models\Upazila;
 use Illuminate\Http\Request;
 
 class CenterController extends Controller
@@ -30,6 +34,10 @@ class CenterController extends Controller
     {
         $data = [
             'pageTitle' => 'Center Create',
+            'associations' =>Association::where('status', 1)->get(),
+            'divisions' =>Division::where('status', 1)->get(),
+            'districts' =>District::where('status', 1)->get(),
+            'upazilas' =>Upazila::where('status', 1)->get(),
         ];
         return view('admin.centers.create', $data);
     }

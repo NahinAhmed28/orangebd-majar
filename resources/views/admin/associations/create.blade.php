@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="m-portlet__head-tools">
-                    <a href="{{ route('admin.association.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Category</a>
+                    <a href="{{ route('admin.association.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Associations</a>
             </div>
         </div>
 
@@ -21,24 +21,25 @@
             <div class="m-portlet__body">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Name </label>
-                            <input type="text" class="form-control m-input" name="name" value="{{ old('name') }}" required placeholder="Category Name"/>
-                                @if ($errors->has('name'))
-                                    <div class="form-control-feedback">{{ $errors->first('name') }}</div>
+                        <div class="form-group  m-form__group {{ $errors->has('title_en') ? 'has-danger' : '' }}">
+                            <label class="form-control-label"><span class="text-danger">*</span> English Title </label>
+                            <input type="text" class="form-control m-input" name="title_en" value="{{ old('title_en') }}" required placeholder="English Title"/>
+                                @if ($errors->has('title_en'))
+                                    <div class="form-control-feedback">{{ $errors->first('title_en') }}</div>
                                 @endif
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('icon') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Image </label>
-                            <input type="file" class="form-control m-input" name="icon" value="{{ old('icon') }}" required placeholder="Icon"/>
-                            @if ($errors->has('icon'))
-                                <div class="form-control-feedback">{{ $errors->first('icon') }}</div>
+                        <div class="form-group  m-form__group {{ $errors->has('title_bn') ? 'has-danger' : '' }}">
+                            <label class="form-control-label"><span class="text-danger">*</span> Bangla Title </label>
+                            <input type="text" class="form-control m-input" name="title_bn" value="{{ old('title_bn') }}" required placeholder="Bangla Title"/>
+                            @if ($errors->has('title_bn'))
+                                <div class="form-control-feedback">{{ $errors->first('title_bn') }}</div>
                             @endif
                         </div>
                     </div>
+
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('status') ? 'has-danger' : '' }}">
@@ -47,9 +48,7 @@
                                 <option value="">---- Select ----</option>
                                 <option value="1">Active</option>
                                 <option value="0">Inactive</option>
-
                             </select>
-
                         </div>
                     </div>
 
