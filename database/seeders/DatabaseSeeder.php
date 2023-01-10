@@ -36,6 +36,9 @@ class DatabaseSeeder extends Seeder
             DivisionsTableSeeder::class,
             DistrictsTableSeeder::class,
             UpazilasTableSeeder::class,
+            AssociationTableSeeder::class,
+            CenterTableSeeder::class,
+
 
         ]);
 

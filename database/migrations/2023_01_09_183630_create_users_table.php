@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('name')->nullable()->default('Mr.Default User');
             $table->string('contact')->nullable()->default('017********');
             $table->string('email')->nullable()->default('default_user@gmail.com');
+            $table->string('address')->nullable()->default('default address,Dhaka, Bangladesh ');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable()->default(Hash::make('password'));
             $table->rememberToken();

@@ -25,8 +25,10 @@
                                         <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Title EN</th>
-                                            <th>Title BN</th>
+                                            <th>Name</th>
+                                            <th>Contact</th>
+                                            <th>Email</th>
+                                            <th>Address</th>
                                             <th>Status</th>
                                             <th width="100px">Action</th>
                                         </tr>
@@ -35,8 +37,10 @@
                                         @foreach($users as $user)
                                             <tr>
                                                 <td>{{$user->id}}</td>
-                                                <td>{{$user->title_en}}</td>
-                                                <td>{{$user->title_bn}}</td>
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->contact}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td>{{$user->address}}</td>
                                                 <td>{{ $user->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>
