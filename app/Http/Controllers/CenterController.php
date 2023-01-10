@@ -10,11 +10,15 @@ class CenterController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data = [
+            'centers' => Center::get()->toQuery()->paginate(5),
+            'pageTitle' => 'Center List',
+        ];
+        return view('admin.centers.index', $data);
     }
 
     /**

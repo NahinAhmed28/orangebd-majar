@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="m-portlet__head-tools">
-                        <a href="{{route('admin.association.create') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fa fa-plus pr-2"></i>Create</a>
+                        <a href="{{route('admin.user.create') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fa fa-plus pr-2"></i>Create</a>
                     </div>
                 </div>
 
@@ -20,9 +20,43 @@
                     <div class="m-section__content">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="">
-                                    <div class="table m-table table-responsive">
-                                        {{--                                        @include('common/datatable')--}}
+                                <div class="table table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Title EN</th>
+                                            <th>Title BN</th>
+                                            <th>Status</th>
+                                            <th width="100px">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($users as $user)
+                                            <tr>
+                                                <td>{{$user->id}}</td>
+                                                <td>{{$user->title_en}}</td>
+                                                <td>{{$user->title_bn}}</td>
+                                                <td>{{$user->status}}</td>
+
+                                                <td>
+                                                    <a href="{{ route('admin.user.edit',[$user->id]) }}" title="Edit">
+                                                        <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                        </button></a>
+                                                    <form method="POST" action="{{ route('admin.user.destroy' ,  [$user->id]) }}"
+                                                          accept-charset="UTF-8" style="display:inline">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger btn-sm show-alert-delete-box"
+                                                                title="Delete Association"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                    <div class="d-flex justify-content-user">
+                                        {!! $users->links() !!}
                                     </div>
                                 </div>
                             </div>
@@ -34,3 +68,5 @@
     </div>
 
 @endsection
+
+

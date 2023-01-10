@@ -55,6 +55,9 @@
                                             @endforeach
                                             </tbody>
                                         </table>
+                                    <div class="d-flex justify-content-center">
+                                        {!! $associations->links() !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
