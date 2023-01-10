@@ -1,0 +1,38 @@
+.btn {
+    padding: .4rem .85rem !important;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.m-form.m-form--fit .m-form__group {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+.m-portlet .m-portlet__body {
+    padding: 1rem 2.2rem !important;
+}
+
+.m-form .m-form__group {
+    padding-bottom: 10px !important;
+}
+.form-control[type=text], .form-control[type=password], .form-control[type=email], .form-control[type=number], select.form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 4px) !important;
+    padding: .475rem .75rem !important;
+    font-size: 1rem;
+}
+
+.table td {
+    padding: .2rem !important;
+    vertical-align: top;
+    border-top: 1px solid #f4f5f8;
+    padding-left: 7px !important;
+}
+
+.bootstrap-select .dropdown-menu.inner > li.selected > a span.check-mark::before {
+    content: "";
+}
+
+.bootstrap-select>.dropdown-toggle:after {
+    content: "";
+}
