@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use App\Models\Division;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,16 @@ class DivisionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data = [
+            'divisions' => Division::get()->toQuery()->paginate(5),
+            'pageTitle' => 'Division List',
+        ];
+        return view('admin.divisions.index', $data);
+
     }
 
     /**

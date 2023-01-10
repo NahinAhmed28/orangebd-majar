@@ -28,15 +28,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('admin.layouts.default');
-});
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
+
+    Route::get('/dashboard', function () {
+        return view('admin.layouts.default');
+    })->name('dashboard');
 
     Route::resource('association', AssociationController::class);
     Route::resource('center', CenterController::class);

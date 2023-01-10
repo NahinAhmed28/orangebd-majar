@@ -37,7 +37,7 @@
                                                     <td>{{$association->id}}</td>
                                                     <td>{{$association->title_en}}</td>
                                                     <td>{{$association->title_bn}}</td>
-                                                    <td>{{$association->status}}</td>
+                                                    <td>{{ $association->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                     <td>
                                                         <a href="{{ route('admin.association.edit',[$association->id]) }}" title="Edit">

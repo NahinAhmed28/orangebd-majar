@@ -11,7 +11,7 @@
 
             {{-- <li class="m-menu__item {{ Request::is('home') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">--}}
             <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
-                <a href="#" class="m-menu__link ">
+                <a href="{{route('admin.dashboard') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
                     <span class="m-menu__link-text">Dashboard</span>
@@ -34,7 +34,7 @@
                     <ul class="m-menu__subnav">
 
 
-                        <li class="m-menu__item {{  (Request::is('admin/section') || Request::is('admin/section/*')) ? 'm-menu__item--active' : '' }}"
+                        <li class="m-menu__item {{  (Request::is('admin/division') || Request::is('admin/division/*')) ? 'm-menu__item--active' : '' }}"
                             aria-haspopup="true" m-menu-link-redirect="1">
                             <a href="{{route('admin.division.index') }}" class="m-menu__link ">
                                 <span class="m-menu__item-here"></span>
@@ -44,7 +44,7 @@
                         </li>
 
 
-                        <li class="m-menu__item {{  (Request::is('admin/system') || Request::is('admin/system/*')) ? 'm-menu__item--active' : '' }}"
+                        <li class="m-menu__item {{  (Request::is('admin/district') || Request::is('admin/district/*')) ? 'm-menu__item--active' : '' }}"
                             aria-haspopup="true" m-menu-link-redirect="1">
                             <a href="{{route('admin.district.index') }}" class="m-menu__link ">
                                 <span class="m-menu__item-here"></span>
@@ -54,7 +54,7 @@
                         </li>
 
 
-                        <li class="m-menu__item {{  (Request::is('admin/disease') || Request::is('admin/disease/*')) ? 'm-menu__item--active' : '' }}"
+                        <li class="m-menu__item {{  (Request::is('admin/upazila') || Request::is('admin/upazila/*')) ? 'm-menu__item--active' : '' }}"
                             aria-haspopup="true" m-menu-link-redirect="1">
                             <a href="{{route('admin.upazila.index') }}" class="m-menu__link ">
                                 <span class="m-menu__item-here"></span>
@@ -66,7 +66,7 @@
                 </div>
             </li>
 
-            <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
+            <li class="m-menu__item  {{  (Request::is('admin/association') || Request::is('admin/association/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.association.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
@@ -74,7 +74,7 @@
                 </a>
             </li>
 
-            <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
+            <li class="m-menu__item  {{  (Request::is('admin/center') || Request::is('admin/center/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.center.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
@@ -82,19 +82,13 @@
                 </a>
             </li>
 
-            <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
+            <li class="m-menu__item  {{  (Request::is('admin/user') || Request::is('admin/user/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.user.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
                     <span class="m-menu__link-text">Register Murid</span>
                 </a>
             </li>
-
-
-
-
-
-
         </ul>
     </div>
 

@@ -37,7 +37,7 @@
                                                 <td>{{$user->id}}</td>
                                                 <td>{{$user->title_en}}</td>
                                                 <td>{{$user->title_bn}}</td>
-                                                <td>{{$user->status}}</td>
+                                                <td>{{ $user->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>
                                                     <a href="{{ route('admin.user.edit',[$user->id]) }}" title="Edit">

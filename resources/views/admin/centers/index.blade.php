@@ -37,7 +37,7 @@
                                                 <td>{{$center->id}}</td>
                                                 <td>{{$center->title_en}}</td>
                                                 <td>{{$center->title_bn}}</td>
-                                                <td>{{$center->status}}</td>
+                                                <td>{{ $center->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>
                                                     <a href="{{ route('admin.center.edit',[$center->id]) }}" title="Edit">
