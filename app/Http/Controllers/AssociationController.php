@@ -7,14 +7,29 @@ use Illuminate\Http\Request;
 
 class AssociationController extends Controller
 {
+//    public $associationModel;
+//    protected $redirectUrl;
+//    const moduleDirectory = 'admin.associations.';
+//
+//    public function __construct(Association $association){
+//        $this->redirectUrl = 'admin/associations';
+//        $this->associationModel = $association;
+//
+//    }
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data = [
+            'associations' => Association::get()->toQuery()->paginate(5),
+            'pageTitle' => 'Association List',
+        ];
+        return view('admin.associations.index', $data);
+
+
     }
 
     /**

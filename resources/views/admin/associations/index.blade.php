@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
 @section('pageTitle', $pageTitle)
 
 @section('content')
@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="m-portlet__head-tools">
-                        <a href="{{route('category.create') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fa fa-plus pr-2"></i>Create</a>
+                        <a href="{{route('admin.association.create') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fa fa-plus pr-2"></i>Create</a>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@
                             <div class="col-md-12">
                                 <div class="">
                                     <div class="table m-table table-responsive">
-                                        @include('common/datatable')
+{{--                                        @include('common/datatable')--}}
                                     </div>
                                 </div>
                             </div>

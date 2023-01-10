@@ -6,7 +6,7 @@
 <head>
     <link rel="shortcut icon" href="{{asset('assets/icon/fismall.png')}}" />
 
-    @include('admin.common.header')
+    @include('admin.layouts.common.header')
     <style>
         .dropdown-menu.show{
             min-width: auto !important;
@@ -17,13 +17,13 @@
 
 <div class="m-grid m-grid--hor m-grid--root m-page">
 
-@include('admin.common.topbar')
+@include('admin.layouts.common.topbar')
 
 <!-- begin::Body -->
     <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
 
         <!-- BEGIN: Left Aside -->
-        @include('admin.common.sidebar')
+        @include('admin.layouts.common.sidebar')
 
         <div class="m-grid__item m-grid__item--fluid m-wrapper">
 
@@ -37,7 +37,7 @@
 
     <!-- end:: Body -->
 
-    @include('admin.common.footer')
+    @include('admin.layouts.common.footer')
 
 </div>
 
