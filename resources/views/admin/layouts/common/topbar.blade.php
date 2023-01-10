@@ -13,7 +13,7 @@
                 <div class="m-stack m-stack--ver m-stack--general">
                     <div class="m-stack__item m-stack__item--middle m-brand__logo">
                         <a href="#" class="m-brand__logo-wrapper">
-                            <img src="{{ asset('assets/icon/qimpmainicon.png') }}"  width="100px" alt="" style="text-align: center"/>
+                            <img src="{{ asset('assets/icon/admin_logo.jpg') }}"  width="100px" alt="" style="text-align: center"/>
 
                         </a>
                     </div>

@@ -27,7 +27,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Title EN</th>
-                                                <th>Title BN</th>
+                                                <th>Division</th>
                                                 <th>Status</th>
 {{--                                                <th width="100px">Action</th>--}}
                                             </tr>
@@ -37,7 +37,7 @@
                                                 <tr>
                                                     <td>{{$district->id}}</td>
                                                     <td>{{$district->title_en}}</td>
-                                                    <td>{{$district->title_bn}}</td>
+                                                    <td>{{$district->division->title_en}}</td>
                                                     <td>{{ $district->status == 1 ? 'Active' : 'Inactive' }}</td>
 
 {{--                                                    <td>--}}

@@ -27,7 +27,8 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Title EN</th>
-                                                <th>Title BN</th>
+                                                <th>Division</th>
+                                                <th>District</th>
                                                 <th>Status</th>
 {{--                                                <th width="100px">Action</th>--}}
                                             </tr>
@@ -37,7 +38,8 @@
                                                 <tr>
                                                     <td>{{$upazila->id}}</td>
                                                     <td>{{$upazila->title_en}}</td>
-                                                    <td>{{$upazila->title_bn}}</td>
+                                                    <td>{{$upazila->district->division->title_en}}</td>
+                                                    <td>{{$upazila->district->title_en}}</td>
                                                     <td>{{ $upazila->status == 1 ? 'Active' : 'Inactive' }}</td>
 
 {{--                                                    <td>--}}

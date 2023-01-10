@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
 @section('pageTitle', $pageTitle)
 
 @section('content')
@@ -11,12 +11,12 @@
                 </div>
             </div>
             <div class="m-portlet__head-tools">
-                    <a href="{{ route('category.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Category</a>
+                    <a href="{{ route('admin.association.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Category</a>
             </div>
         </div>
 
         <!--begin::Form-->
-        <form class="m-form m-form--fit m-form--label-align-right"  action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+        <form class="m-form m-form--fit m-form--label-align-right"  action="{{ route('admin.association.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="m-portlet__body">
                 <div class="row">
@@ -58,7 +58,7 @@
             </div>
             <div class="m-portlet__foot m-portlet__foot--fit" >
                 <div class="m-form__actions text-center">
-                    <a href="{{ route('category.index') }}" class="btn btn-outline-brand"><i class="fa fa-times"></i> Cancel</a>
+                    <a href="{{ route('admin.association.index') }}" class="btn btn-outline-brand"><i class="fa fa-times"></i> Cancel</a>
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
                 </div>
             </div>

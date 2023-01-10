@@ -26,7 +26,13 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Title EN</th>
-                                            <th>Title BN</th>
+                                            <th>CODE</th>
+                                            <th>Division</th>
+                                            <th>District</th>
+                                            <th>Upazila</th>
+                                            <th>Association</th>
+                                            <th>Address</th>
+                                            <th>Contact</th>
                                             <th>Status</th>
                                             <th width="100px">Action</th>
                                         </tr>
@@ -36,7 +42,13 @@
                                             <tr>
                                                 <td>{{$center->id}}</td>
                                                 <td>{{$center->title_en}}</td>
-                                                <td>{{$center->title_bn}}</td>
+                                                <td>{{$center->code}}</td>
+                                                <td>{{$center->division->title_en}}</td>
+                                                <td>{{$center->district->title_en}}</td>
+                                                <td>{{$center->upazila->title_en}}</td>
+                                                <td>{{$center->association->title_en}}</td>
+                                                <td>{{$center->address_en}}</td>
+                                                <td>{{$center->contact}}</td>
                                                 <td>{{ $center->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>
