@@ -19,12 +19,51 @@
             </li>
 
 
-            <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
-                <a href="#" class="m-menu__link ">
+            <li class="m-menu__item m-menu__item--submenu
+            {{ (Request::is(['admin/section*', 'admin/system*', 'admin/disease'])) ?
+            'm-menu__item--open m-menu__item--active' : ''}}
+
+                " aria-haspopup="true" m-menu-submenu-toggle="hover">
+                <a href="javascript:;" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
-                    <span class="m-menu__link-text">Locations</span>
+                    <i class="m-menu__link-icon fas fa-procedures"></i>
+                    <span class="m-menu__link-text">Locations </span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
+                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+
+
+                        <li class="m-menu__item {{  (Request::is('admin/section') || Request::is('admin/section/*')) ? 'm-menu__item--active' : '' }}"
+                            aria-haspopup="true" m-menu-link-redirect="1">
+                            <a href="#" class="m-menu__link ">
+                                <span class="m-menu__item-here"></span>
+                                <i class="m-menu__link-icon fa fa-forward"></i>
+                                <span class="m-menu__link-text">Division</span>
+                            </a>
+                        </li>
+
+
+                        <li class="m-menu__item {{  (Request::is('admin/system') || Request::is('admin/system/*')) ? 'm-menu__item--active' : '' }}"
+                            aria-haspopup="true" m-menu-link-redirect="1">
+                            <a href="#" class="m-menu__link ">
+                                <span class="m-menu__item-here"></span>
+                                <i class="m-menu__link-icon fas fa-allergies"></i>
+                                <span class="m-menu__link-text">District</span>
+                            </a>
+                        </li>
+
+
+                        <li class="m-menu__item {{  (Request::is('admin/disease') || Request::is('admin/disease/*')) ? 'm-menu__item--active' : '' }}"
+                            aria-haspopup="true" m-menu-link-redirect="1">
+                            <a href="#" class="m-menu__link ">
+                                <span class="m-menu__item-here"></span>
+                                <i class="m-menu__link-icon fas fa-x-ray"></i>
+                                <span class="m-menu__link-text">Upazila</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
 
             <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
@@ -50,6 +89,7 @@
                     <span class="m-menu__link-text">Register Murid</span>
                 </a>
             </li>
+
 
 
 
