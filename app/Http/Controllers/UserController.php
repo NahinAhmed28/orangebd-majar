@@ -18,6 +18,8 @@ class UserController extends Controller
             'users' => User::get()->toQuery()->paginate(5),
             'pageTitle' => 'Murid List',
         ];
+
+
         return view('admin.users.index', $data);
     }
 

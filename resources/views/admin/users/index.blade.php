@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="table table-responsive">
-                                    <table class="table table-bordered">
+                                    <table id="users" class="table table-bordered">
                                         <thead>
                                         <tr>
                                             <th>No</th>
@@ -55,9 +55,9 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    <div class="d-flex justify-content-user">
-                                        {!! $users->links() !!}
-                                    </div>
+{{--                                    <div class="d-flex justify-content-user">--}}
+{{--                                        {!! $users->links() !!}--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -68,5 +68,16 @@
     </div>
 
 @endsection
+@push('scripts')
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#users').DataTable();
+        } );
+    </script>
+@endpush
 
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+@endpush
 

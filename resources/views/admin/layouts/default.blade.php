@@ -7,11 +7,15 @@
     <link rel="shortcut icon" href="{{asset('assets/icon/fismall.png')}}" />
 
     @include('admin.layouts.common.header')
+    @stack('styles')
+
     <style>
         .dropdown-menu.show{
             min-width: auto !important;
         }
     </style>
+
+
 </head>
 <body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
 
