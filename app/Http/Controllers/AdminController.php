@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Center;
+use App\Models\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -38,6 +39,7 @@ class AdminController extends Controller
         $data = [
             'pageTitle' => 'Admin Create',
             'centers' =>Center::where('status', 1)->get(),
+            'usertypes' =>UserType::where('status', 1)->get(),
         ];
         return view('admin.admins.create', $data);
     }
@@ -54,17 +56,21 @@ class AdminController extends Controller
             'username' => 'required',
             'code' => 'required',
             'email' =>'required',
-            'contact' => 'required',
+            'contact' => 'required|max:255',
             'address_en' => 'required',
             'address_bn' => 'required',
             'center_id' => 'required',
             'usertype_id' => 'required',
+            'title_en' =>  'required',
+            'title_bn' =>  'required',
         ]);
 
         $data = Admin::create([
             'code' => $request->code,
             'username' => $request->username,
             'email' => $request->email,
+            'title_en' => $request->title_en,
+            'title_bn' => $request->title_bn,
             'contact' => $request->contact,
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,

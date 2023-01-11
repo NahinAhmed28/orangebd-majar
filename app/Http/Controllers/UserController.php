@@ -58,7 +58,7 @@ class UserController extends Controller
             'name' => 'required',
             'code' => 'required',
             'email' =>'required',
-            'contact' => 'required',
+            'contact' => 'required|max:255',
             'address_en' => 'required',
             'address_bn' => 'required',
             'center_id' => 'required',
