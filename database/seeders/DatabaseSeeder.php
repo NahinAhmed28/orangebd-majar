@@ -36,11 +36,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
 
+            AssociationTableSeeder::class,
             DivisionsTableSeeder::class,
             DistrictsTableSeeder::class,
             UpazilasTableSeeder::class,
-            AssociationTableSeeder::class,
+            UserTypesTableSeeder::class,
             CenterTableSeeder::class,
+            AdminsTableSeeder::class,
 
 
         ]);

@@ -31,7 +31,7 @@ class AdminsTableSeeder extends Seeder
                     'contact' => 'contact',
                     'address_en' => 'address_en',
                     'address_bn' => 'address_bn',
-                    'center_id' => 'center_id',
+                    'center_id' => 1,
                     'usertype_id' =>1,
                     'status' => 1,
                     'password' => Hash::make('password'),
