@@ -9,6 +9,8 @@ use App\Models\Division;
 use App\Models\Upazila;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use function GuzzleHttp\Promise\all;
 
 class UserController extends Controller
 {
@@ -20,7 +22,7 @@ class UserController extends Controller
     public function index()
     {
         $data = [
-            'users' => User::get()->toQuery()->paginate(5),
+            'users' => User::get()->toQuery()->paginate(50),
             'pageTitle' => 'Murid List',
         ];
 
@@ -46,11 +48,36 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->all());
+
+        $request->validate([
+            'name' => 'required',
+            'code' => 'required',
+            'email' =>'required',
+            'contact' => 'required',
+            'address_en' => 'required',
+            'address_bn' => 'required',
+            'center_id' => 'required',
+            'password' => 'required',
+        ]);
+
+        $data = User::create([
+            'code' => $request->code,
+            'name' => $request->name,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'address_en' => $request->address_en,
+            'address_bn' => $request->address_bn,
+            'center_id' => $request->center_id,
+            'password' => Hash::make($request['password']),
+            'email_verified_at' => now(),
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -68,11 +95,17 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        //
+        $data = [
+            'pageTitle' => 'User Edit',
+            'user' =>  User::find($id),
+            'centers' =>Center::where('status', 1)->get(),
+        ];
+
+        return view('admin.users.edit', $data);
     }
 
     /**
@@ -80,21 +113,48 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+
+//        dd($request->all());
+
+//        $request->validate([
+//            'name' => 'required',
+//            'code' => 'required',
+//            'email' =>'required',
+//            'contact' => 'required',
+//            'address_en' => 'required',
+//            'address_bn' => 'required',
+//            'center_id' => 'required',
+//            'password' => 'required',
+//        ]);
+
+        $user->update([
+            'code' => $request->code,
+            'name' => $request->name,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'address_en' => $request->address_en,
+            'address_bn' => $request->address_bn,
+            'center_id' => $request->center_id,
+            'password' => Hash::make($request['password']),
+        ]);
+
+
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->back();
     }
 }

@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="m-portlet__head-tools">
-                        <a href="{{route('admin.user.create') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fa fa-plus pr-2"></i>Create</a>
+                        <a href="{{route('admin.user.create') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fa fa-plus pr-2"></i>New Register</a>
                     </div>
                 </div>
 
@@ -28,7 +28,8 @@
                                             <th>Name</th>
                                             <th>Contact</th>
                                             <th>Email</th>
-                                            <th>Address</th>
+                                            <th>Address en</th>
+                                            <th>Address bn</th>
                                             <th>Status</th>
                                             <th width="100px">Action</th>
                                         </tr>
@@ -40,7 +41,8 @@
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->contact}}</td>
                                                 <td>{{$user->email}}</td>
-                                                <td>{{$user->address}}</td>
+                                                <td>{{$user->address_en}}</td>
+                                                <td>{{$user->address_bn}}</td>
                                                 <td>{{ $user->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>
