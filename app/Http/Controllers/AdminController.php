@@ -76,6 +76,7 @@ class AdminController extends Controller
             'address_bn' => $request->address_bn,
             'center_id' => $request->center_id,
             'usertype_id' => $request->usertype_id,
+            'status' => $request->status,
             'password' => Hash::make($request['password']),
             'email_verified_at' => now(),
         ]);
@@ -106,6 +107,7 @@ class AdminController extends Controller
             'pageTitle' => 'Admin Edit',
             'admin' =>  Admin::find($id),
             'centers' =>Center::where('status', 1)->get(),
+            'usertypes' =>UserType::where('status', 1)->get(),
         ];
 
         return view('admin.admins.edit', $data);
@@ -140,6 +142,7 @@ class AdminController extends Controller
             'address_bn' => $request->address_bn,
             'center_id' => $request->center_id,
             'usertype_id' => $request->usertype_id,
+            'status' => $request->status,
             'password' => Hash::make($request['password']),
             'email_verified_at' => now(),
         ]);

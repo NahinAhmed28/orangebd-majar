@@ -72,6 +72,7 @@ class UserController extends Controller
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,
             'center_id' => $request->center_id,
+            'status' => $request->status,
             'password' => Hash::make($request['password']),
             'email_verified_at' => now(),
         ]);
@@ -137,6 +138,7 @@ class UserController extends Controller
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,
             'center_id' => $request->center_id,
+            'status' => $request->status,
             'password' => Hash::make($request['password']),
         ]);
 
