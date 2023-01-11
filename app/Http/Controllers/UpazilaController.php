@@ -16,7 +16,7 @@ class UpazilaController extends Controller
     {
         $data = [
             'upazilas' => Upazila::get()->toQuery()->paginate(5),
-            'pageTitle' => 'Division List',
+            'pageTitle' => 'Upazila List',
         ];
         return view('admin.upazilas.index', $data);
     }

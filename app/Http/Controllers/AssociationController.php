@@ -52,11 +52,23 @@ class AssociationController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title_en' => 'required',
+            'title_bn' =>'required',
+            'status' => 'required',
+        ]);
+
+        $data = Association::create([
+            'title_en' => $request->title_en,
+            'title_bn' => $request->title_bn,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -74,11 +86,16 @@ class AssociationController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Association  $association
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Association $association)
+    public function edit($id)
     {
-        //
+        $data = [
+            'pageTitle' => 'Association Edit',
+            'association' =>  Association::find($id),
+        ];
+
+        return view('admin.associations.edit', $data);
     }
 
     /**
@@ -86,21 +103,35 @@ class AssociationController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Association  $association
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Association $association)
     {
-        //
+        $request->validate([
+            'title_en' => 'required',
+            'title_bn' =>'required',
+            'status' => 'required',
+        ]);
+
+        $association->update([
+            'title_en' => $request->title_en,
+            'title_bn' => $request->title_bn,
+            'status' => $request->status,
+        ]);
+
+
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Association  $association
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Association $association)
+    public function destroy($id)
     {
-        //
+        Association::destroy($id);
+        return redirect()->back();
     }
 }
