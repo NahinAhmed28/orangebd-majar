@@ -35,8 +35,8 @@
                                             @foreach($associations as $association)
                                                 <tr>
                                                     <td>{{$association->id}}</td>
-                                                    <td>{{$association->title_en}}</td>
-                                                    <td>{{$association->title_bn}}</td>
+                                                    <td>{{$association->title_en ?? 'None'}}</td>
+                                                    <td>{{$association->title_bn ?? 'None'}}</td>
                                                     <td>{{ $association->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                     <td>

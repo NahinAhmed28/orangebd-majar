@@ -39,14 +39,25 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="col-xs-12 col-sm-12 ">
-                            <div class="form-group  m-form__group {{ $errors->has('generic_id') ? 'has-danger' : '' }}">
+                            <div class="form-group  m-form__group {{ $errors->has('code') ? 'has-danger' : '' }}">
+                                <label class="form-control-label"><span class="text-danger">*</span>  Bangla Title </label>
+                                <input type="text" class="form-control m-input" name="code" value="{{ old('code') }}" placeholder=" Bangla Title"/>
+                                @if ($errors->has('code'))
+                                    <div class="form-control-feedback">{{ $errors->first('code') }}</div>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 ">
+                            <div class="form-group  m-form__group {{ $errors->has('association_id') ? 'has-danger' : '' }}">
                                 <label class="form-control-label"><span class="text-danger">*</span>Association</label>
-                                <select class="form-control m-bootstrap-select m_selectpicker" name="generic_id" data-live-search="true">
+                                <select class="form-control m-bootstrap-select m_selectpicker" name="association_id" data-live-search="true">
                                     <option value="">---- Select ----</option>
                                     @foreach($associations as $association)
                                         <option value="{{$association->id}}"
-                                            {{$association->id == old('association_id') ? 'selected' : ''}}>{{$association->title}}</option>
+                                            {{$association->id == old('association_id') ? 'selected' : ''}}>{{$association->title_en}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('association_id'))
@@ -61,7 +72,7 @@
                                     <option value="">---- Select ----</option>
                                     @foreach($divisions as $division)
                                         <option value="{{$division->id}}"
-                                            {{$division->id == old('division_id') ? 'selected' : ''}}>{{$division->title}}</option>
+                                            {{$division->id == old('division_id') ? 'selected' : ''}}>{{$division->title_en}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('division_id'))
@@ -76,7 +87,7 @@
                                     <option value="">---- Select ----</option>
                                     @foreach($districts as $district)
                                         <option value="{{$district->id}}"
-                                            {{$district->id == old('district_id') ? 'selected' : ''}}>{{$district->title}}</option>
+                                            {{$district->id == old('district_id') ? 'selected' : ''}}>{{$district->title_en}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('district_id'))
@@ -102,7 +113,7 @@
                                     <option value="">---- Select ----</option>
                                     @foreach($upazilas as $upazila)
                                         <option value="{{$upazila->id}}"
-                                            {{$upazila->id == old('upazila_id') ? 'selected' : ''}}>{{$upazila->title}}</option>
+                                            {{$upazila->id == old('upazila_id') ? 'selected' : ''}}>{{$upazila->title_en}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('upazila_id'))
@@ -111,14 +122,13 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 ">
-                            <div class="form-group  m-form__group ">
-                                <label class="form-control-label"> Status </label>
-                                <select class="form-control m-input {{ $errors->has('recommended') ? 'has-danger' : '' }}" name="recommended">
-                                    <option value="">----Select----</option>
+                            <div class="form-group  m-form__group {{ $errors->has('status') ? 'has-danger' : '' }}">
+                                <label class="form-control-label"><span class="text-danger">*</span> Status </label>
+                                <select class="form-control m-input" name="status" required>
+                                    <option value="">---- Select ----</option>
                                     <option value="1">Active</option>
                                     <option value="0">Inactive</option>
                                 </select>
-
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 ">

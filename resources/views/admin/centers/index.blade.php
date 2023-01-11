@@ -41,14 +41,14 @@
                                         @foreach($centers as $center)
                                             <tr>
                                                 <td>{{$center->id}}</td>
-                                                <td>{{$center->title_en}}</td>
+                                                <td>{{$center->title_en ?? 'None' }}</td>
                                                 <td>{{$center->code}}</td>
-                                                <td>{{$center->division->title_en}}</td>
-                                                <td>{{$center->district->title_en}}</td>
-                                                <td>{{$center->upazila->title_en}}</td>
-                                                <td>{{$center->association->title_en}}</td>
-                                                <td>{{$center->address_en}}</td>
-                                                <td>{{$center->contact}}</td>
+                                                <td>{{$center->division->title_en ?? 'None'}}</td>
+                                                <td>{{$center->district->title_en ?? 'None'}}</td>
+                                                <td>{{$center->upazila->title_en ?? 'None'}}</td>
+                                                <td>{{$center->association->title_en ?? 'None'}}</td>
+                                                <td>{{$center->address_en ?? 'None'}}</td>
+                                                <td>{{$center->contact ?? 'None'}}</td>
                                                 <td>{{ $center->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>
