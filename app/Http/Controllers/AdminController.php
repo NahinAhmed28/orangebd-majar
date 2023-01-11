@@ -17,7 +17,7 @@ class AdminController extends Controller
     public function index()
     {
         $data = [
-            'users' => Admin::get()->toQuery()->paginate(50),
+            'admins' => Admin::get()->toQuery()->paginate(50),
             'pageTitle' => 'Admin List',
         ];
 
@@ -98,7 +98,7 @@ class AdminController extends Controller
     {
         $data = [
             'pageTitle' => 'Admin Edit',
-            'user' =>  Admin::find($id),
+            'admin' =>  Admin::find($id),
             'centers' =>Center::where('status', 1)->get(),
         ];
 

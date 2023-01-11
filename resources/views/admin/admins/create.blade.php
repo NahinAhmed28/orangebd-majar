@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
 @section('pageTitle', $pageTitle)
 
 @section('content')
@@ -11,12 +11,12 @@
                 </div>
             </div>
             <div class="m-portlet__head-tools">
-                    <a href="{{ route('category.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Category</a>
+                    <a href="{{ route('admin.admin.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Category</a>
             </div>
         </div>
 
         <!--begin::Form-->
-        <form class="m-form m-form--fit m-form--label-align-right"  action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+        <form class="m-form m-form--fit m-form--label-align-right"  action="{{ route('admin.admin.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="m-portlet__body">
                 <div class="row">
@@ -29,17 +29,6 @@
                                 @endif
                         </div>
                     </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('icon') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Image </label>
-                            <input type="file" class="form-control m-input" name="icon" value="{{ old('icon') }}" required placeholder="Icon"/>
-                            @if ($errors->has('icon'))
-                                <div class="form-control-feedback">{{ $errors->first('icon') }}</div>
-                            @endif
-                        </div>
-                    </div>
-
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('status') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Status </label>
@@ -58,7 +47,7 @@
             </div>
             <div class="m-portlet__foot m-portlet__foot--fit" >
                 <div class="m-form__actions text-center">
-                    <a href="{{ route('category.index') }}" class="btn btn-outline-brand"><i class="fa fa-times"></i> Cancel</a>
+                    <a href="{{ route('admin.admin.index') }}" class="btn btn-outline-brand"><i class="fa fa-times"></i> Cancel</a>
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
                 </div>
             </div>

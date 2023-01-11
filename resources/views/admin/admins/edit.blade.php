@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('admin.layouts.default')
 @section('pageTitle', $pageTitle)
 
 @section('content')
@@ -10,26 +10,26 @@
                 </div>
             </div>
             <div class="m-portlet__head-tools">
-                <a href="{{ route('category.index') }}" class="btn btn-primary m-btn m-btn--icon"><i
-                        class="fas fa-sitemap pr-2"></i>Category</a>
+                <a href="{{ route('admin.admin.index') }}" class="btn btn-primary m-btn m-btn--icon"><i
+                        class="fas fa-sitemap pr-2"></i>Admins</a>
             </div>
         </div>
 
         <!--begin::Form-->
         <form class="m-form m-form--fit m-form--label-align-right"
-              action="{{ route('category.update', $category->id) }}" method="post" enctype="multipart/form-data">
+              action="{{ route('admin.admin.update', $admin->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="m-portlet__body">
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group {{ $errors->has('username') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Name </label>
-                            <input type="text" class="form-control m-input" name="name"
-                                   value="{{ old('name', $category->name) }}" placeholder="Category Name"/>
-                            @if ($errors->has('name'))
-                                <div class="form-control-feedback">{{ $errors->first('name') }}</div>
+                            <input type="text" class="form-control m-input" name="username"
+                                   value="{{ old('username', $admin->username) }}" placeholder="Category Name"/>
+                            @if ($errors->has('username'))
+                                <div class="form-control-feedback">{{ $errors->first('username') }}</div>
                             @endif
                         </div>
                     </div>
@@ -37,27 +37,9 @@
                         <div class="form-group  m-form__group">
                             <label class="form-control-label"> Select Status </label>
                             <select class="form-control m-input " name="status">
-                                <option value="1" {{ $category->status == 1  ? 'selected' : '' }}>Active</option>
-                                <option value="0" {{ $category->status == 0  ? 'selected' : '' }}>Inactive</option>
+                                <option value="1" {{ $admin->status == 1  ? 'selected' : '' }}>Active</option>
+                                <option value="0" {{ $admin->status == 0  ? 'selected' : '' }}>Inactive</option>
                             </select>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('icon') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Icon </label><br>
-                            @if(isset( $category->icon))
-                                <img class="img-thumbnail" src="{{ asset('uploads/categoryFiles/'.$category->icon)}}"
-                                     width="40">
-                            @else
-                                No Thumbnail
-                            @endif
-                            <br><br>
-                            <input type="file" class="form-control m-input" name="icon" placeholder="icon"/>
-                            @if ($errors->has('icon'))
-                                <div class="form-control-feedback">{{ $errors->first('icon') }}</div>
-                            @endif
                         </div>
                     </div>
                 </div>
@@ -65,7 +47,7 @@
             </div>
             <div class="m-portlet__foot m-portlet__foot--fit">
                 <div class="m-form__actions text-center">
-                    <a href="{{ route('category.index') }}" class="btn btn-outline-brand"><i class="fa fa-times"></i>
+                    <a href="{{ route('admin.admin.index') }}" class="btn btn-outline-brand"><i class="fa fa-times"></i>
                         Cancel</a>
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
                 </div>
