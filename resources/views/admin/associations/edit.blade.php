@@ -27,7 +27,7 @@
                         <div class="form-group  m-form__group {{ $errors->has('title_en') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Name </label>
                             <input type="text" class="form-control m-input" name="title_en"
-                                   value="{{ old('title_en', $association->title_en) }}" placeholder="Category Name"/>
+                                   value="{{ old('title_en', $association->title_en) }}" placeholder=" Name"/>
                             @if ($errors->has('title_en'))
                                 <div class="form-control-feedback">{{ $errors->first('title_en') }}</div>
                             @endif
@@ -37,7 +37,7 @@
                         <div class="form-group  m-form__group {{ $errors->has('title_bn') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Name </label>
                             <input type="text" class="form-control m-input" name="title_bn"
-                                   value="{{ old('title_bn', $association->title_bn) }}" placeholder="Category Name"/>
+                                   value="{{ old('title_bn', $association->title_bn) }}" placeholder=" Name"/>
                             @if ($errors->has('title_bn'))
                                 <div class="form-control-feedback">{{ $errors->first('title_bn') }}</div>
                             @endif

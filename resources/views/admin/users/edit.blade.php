@@ -97,7 +97,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('password') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Password </label>
-                            <input type="text" class="form-control m-input" name="password" value="{{ old('pass', $user->password) }}" required placeholder="password"/>
+                            <input type="text" class="form-control m-input" name="password" value="{{ old('password' }}" required placeholder="Leave empty to keep unchange"/>
                             @if ($errors->has('password'))
                                 <div class="form-control-feedback">{{ $errors->first('password') }}</div>
                             @endif

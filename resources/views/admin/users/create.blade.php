@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="m-portlet__head-tools">
-                    <a href="{{ route('admin.user.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Category</a>
+                    <a href="{{ route('admin.user.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Users</a>
             </div>
         </div>
 

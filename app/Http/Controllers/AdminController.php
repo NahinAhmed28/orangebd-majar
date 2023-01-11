@@ -3,42 +3,78 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Center;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data = [
+            'users' => Admin::get()->toQuery()->paginate(50),
+            'pageTitle' => 'Admin List',
+        ];
+
+
+        return view('admin.admins.index', $data);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
 
 
 
     public function create()
     {
-        //
+        $data = [
+            'pageTitle' => 'Admin Create',
+            'centers' =>Center::where('status', 1)->get(),
+        ];
+        return view('admin.admins.create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'code' => 'required',
+            'email' =>'required',
+            'contact' => 'required',
+            'address_en' => 'required',
+            'address_bn' => 'required',
+            'center_id' => 'required',
+            'usertype_id' => 'required',
+        ]);
+
+        $data = Admin::create([
+            'code' => $request->code,
+            'username' => $request->username,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'address_en' => $request->address_en,
+            'address_bn' => $request->address_bn,
+            'center_id' => $request->center_id,
+            'usertype_id' => $request->usertype_id,
+            'password' => Hash::make($request['password']),
+            'email_verified_at' => now(),
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -56,11 +92,17 @@ class AdminController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Admin $admin)
+    public function edit($id)
     {
-        //
+        $data = [
+            'pageTitle' => 'Admin Edit',
+            'user' =>  Admin::find($id),
+            'centers' =>Center::where('status', 1)->get(),
+        ];
+
+        return view('admin.admins.edit', $data);
     }
 
     /**
@@ -68,21 +110,47 @@ class AdminController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Admin $admin)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'code' => 'required',
+            'email' =>'required',
+            'contact' => 'required',
+            'address_en' => 'required',
+            'address_bn' => 'required',
+            'center_id' => 'required',
+            'usertype_id' => 'required',
+        ]);
+
+        $admin->update([
+            'code' => $request->code,
+            'username' => $request->username,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'address_en' => $request->address_en,
+            'address_bn' => $request->address_bn,
+            'center_id' => $request->center_id,
+            'usertype_id' => $request->usertype_id,
+            'password' => Hash::make($request['password']),
+            'email_verified_at' => now(),
+        ]);
+
+
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-        //
+        Admin::destroy($id);
+        return redirect()->back();
     }
 }

@@ -62,7 +62,6 @@ class UserController extends Controller
             'address_en' => 'required',
             'address_bn' => 'required',
             'center_id' => 'required',
-            'password' => 'required',
         ]);
 
         $data = User::create([
@@ -120,16 +119,15 @@ class UserController extends Controller
 
 //        dd($request->all());
 
-//        $request->validate([
-//            'name' => 'required',
-//            'code' => 'required',
-//            'email' =>'required',
-//            'contact' => 'required',
-//            'address_en' => 'required',
-//            'address_bn' => 'required',
-//            'center_id' => 'required',
-//            'password' => 'required',
-//        ]);
+        $request->validate([
+            'name' => 'required',
+            'code' => 'required',
+            'email' =>'required',
+            'contact' => 'required',
+            'address_en' => 'required',
+            'address_bn' => 'required',
+            'center_id' => 'required',
+        ]);
 
         $user->update([
             'code' => $request->code,

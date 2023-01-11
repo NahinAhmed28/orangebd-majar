@@ -82,6 +82,14 @@
                 </a>
             </li>
 
+            <li class="m-menu__item  {{  (Request::is('admin/admin') || Request::is('admin/admin/*')) }} " aria-haspopup="true">
+                <a href="{{route('admin.admin.index') }}" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <span class="m-menu__link-text">Admins</span>
+                </a>
+            </li>
+
             <li class="m-menu__item  {{  (Request::is('admin/user') || Request::is('admin/user/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.user.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
