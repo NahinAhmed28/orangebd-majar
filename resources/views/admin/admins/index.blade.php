@@ -26,8 +26,16 @@
                                             <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>code</th>
+                                                <th>username</th>
+                                                <th>email</th>
                                                 <th>Title EN</th>
                                                 <th>Title BN</th>
+                                                <th>Center</th>
+                                                <th>Usertype</th>
+                                                <th>Addres En</th>
+                                                <th>Addres Bn</th>
+                                                <th>Contact</th>
                                                 <th>Status</th>
                                                                                                 <th width="100px">Action</th>
                                             </tr>
@@ -36,22 +44,30 @@
                                             @foreach($admins as $admin)
                                                 <tr>
                                                     <td>{{$admin->id ?? 'None'}}</td>
+                                                    <td>{{$admin->code ?? 'None'}}</td>
+                                                    <td>{{$admin->username ?? 'None'}}</td>
+                                                    <td>{{$admin->email ?? 'None'}}</td>
                                                     <td>{{$admin->title_en ?? 'None'}}</td>
                                                     <td>{{$admin->title_bn ?? 'None'}}</td>
+                                                    <td>{{$admin->center->title_en ?? 'None'}}</td>
+                                                    <td>{{$admin->usertype->title_en ?? 'None'}}</td>
+                                                    <td>{{$admin->address_en ?? 'None'}}</td>
+                                                    <td>{{$admin->address_bn ?? 'None'}}</td>
+                                                    <td>{{$admin->contact ?? 'None'}}</td>
                                                     <td>{{ $admin->status == 1 ? 'Active' : 'Inactive' }}</td>
 
-                                                                                                        <td>
-                                                                                                            <a href="{{ route('admin.admin.edit',[$admin->id]) }}" title="Edit">
-                                                                                                                <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
-                                                                                                                </button></a>
-                                                                                                            <form method="POST" action="{{ route('admin.admin.destroy' ,  [$admin->id]) }}"
-                                                                                                                  accept-charset="UTF-8" style="display:inline">
-                                                                                                                @method('DELETE')
-                                                                                                                @csrf
-                                                                                                                <button type="submit" class="btn btn-danger btn-sm show-alert-delete-box"
-                                                                                                                        title="Delete Association"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                                                                                            </form>
-                                                                                                        </td>
+                                                     <td>
+                                                         <a href="{{ route('admin.admin.edit',[$admin->id]) }}" title="Edit">
+                                                             <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                                             </button></a>
+                                                         <form method="POST" action="{{ route('admin.admin.destroy' ,  [$admin->id]) }}"
+                                                               accept-charset="UTF-8" style="display:inline">
+                                                             @method('DELETE')
+                                                             @csrf
+                                                             <button type="submit" class="btn btn-danger btn-sm show-alert-delete-box"
+                                                                     title="Delete Association"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                         </form>
+                                                     </td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
