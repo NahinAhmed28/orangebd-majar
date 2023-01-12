@@ -23,7 +23,7 @@ class AdminAuthenticated
         if ($request->ajax() || $request->wantsJson()) {
             return response('Unauthorized.', 401);
         } else {
-            return redirect(route('adminLogin'));
+            return redirect(route('admin.adminLogin'));
         }
     }
 }

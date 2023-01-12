@@ -28,25 +28,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
-    Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
-});
-
+Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
-
-    Route::get('/dashboard', function () {
-//        if(Auth::guard('admin')->check()){
-//            return Auth::guard('admin')->user()->username;
-//        }
-        return view('admin.layouts.default');
-    })->name('dashboard');
-
+Route::prefix('admin')->name('admin.')->middleware(['admin'])->group( function(){
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('association', AssociationController::class);
     Route::resource('center', CenterController::class);
     Route::resource('division', DivisionController::class);
@@ -55,7 +44,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::resource('admin', AdminController::class);
     Route::resource('userType', UserTypeController::class);
     Route::resource('user', UserController::class);
-
 });
 
 

@@ -25,7 +25,7 @@
             <div class="card-body">
                 <h2 class="brand-text text-primary ms-1">Admin Login</h2>
 
-                <form class="auth-login-form mt-2" action="{{route('adminLoginPost')}}" method="post">
+                <form class="auth-login-form mt-2" action="{{route('admin.adminLoginPost')}}" method="post">
                     @csrf
                     <div class="mb-1">
                         <label for="email" class="form-label">Email</label>
