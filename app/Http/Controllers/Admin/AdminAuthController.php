@@ -39,7 +39,7 @@ class AdminAuthController extends Controller
                 return redirect()->route('admin.dashboard')->with('success','You are Logged in sucessfully.');
 //            }
         }else {
-            dd('not ok');
+//            dd('not ok');
             return back()->with('error','Whoops! invalid email and password.');
         }
 
