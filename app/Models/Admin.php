@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Admin extends Model
+class Admin extends Authenticatable
 {
+    use HasApiTokens, HasFactory, Notifiable;
     protected $guarded =['id'];
-    use HasFactory;
 
     public function center(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

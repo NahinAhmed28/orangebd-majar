@@ -11,6 +11,7 @@ use App\Http\Controllers\UpazilaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserTypeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\AdminAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,10 @@ Route::get('/', function () {
 });
 
 
-
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+    Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+});
 
 Auth::routes();
 
@@ -37,6 +41,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
 
     Route::get('/dashboard', function () {
+//        if(Auth::guard('admin')->check()){
+//            return Auth::guard('admin')->user()->username;
+//        }
         return view('admin.layouts.default');
     })->name('dashboard');
 
