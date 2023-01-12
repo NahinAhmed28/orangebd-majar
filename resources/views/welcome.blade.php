@@ -35,7 +35,7 @@
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                         @endif
                     @endauth
-                        <a href="{{ route('admin.adminLogin') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Admin login</a>
+                        <a href="{{ route('adminLogin') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Admin login</a>
                 </div>
             @endif
 

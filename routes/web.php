@@ -28,13 +28,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
-Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+Route::get('/admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+Route::post('/admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->name('admin.')->middleware(['admin'])->group( function(){
+Route::prefix('admin')->name('admin.')->middleware(['adminauth'])->group( function(){
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('association', AssociationController::class);
     Route::resource('center', CenterController::class);
