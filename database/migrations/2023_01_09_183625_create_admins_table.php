@@ -23,8 +23,8 @@ return new class extends Migration
             $table->mediumText('address_bn')->nullable();
             $table->mediumText('address_en')->nullable();
             $table->string('contact',13)->nullable()->default('01*********');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
+            $table->string('username')->unique()->nullable();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable()->default('$2y$10$Gkvr53MZBrPViW8jKqjq/.3wW7pnzUDZZ61qHUBHh62gCzICJB7We');
             $table->rememberToken();

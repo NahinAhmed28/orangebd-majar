@@ -24,7 +24,7 @@ class AdminsTableSeeder extends Seeder
                 array (
 //                    'id' => 1,
                     'code' => 10,
-                    'username' => 'seed admin',
+//                    'username' => 'seed admin',
                     'email' => 'admin'.'@gmail'.'.com',
                     'title_en' => 'title_en',
                     'title_bn' =>'title_bn',

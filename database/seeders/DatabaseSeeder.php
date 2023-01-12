@@ -24,10 +24,12 @@ class DatabaseSeeder extends Seeder
         // ]);
         DB::table('users')->insert([
             'code' => '1000',
-            'name' => 'admin',
+            'name' => '',
             'email' =>'admin'.'@gmail.com',
             'address_en' =>'default address',
             'address_bn' =>'default address',
+            'title_bn' =>'default title',
+            'title_en' =>'default title',
             'password' =>Hash::make('password'),
             'email_verified_at' => now(),
             'created_at'=>	now(),

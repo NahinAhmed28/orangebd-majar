@@ -18,7 +18,9 @@ return new class extends Migration
             $table->increments('id');
             $table->string('code')->nullable()->default('1001');
             $table->unsignedInteger('center_id')->nullable()->index('users_fk_center_id');
-            $table->string('name')->nullable()->default('Mr.Default User');
+            $table->string('name')->nullable();
+            $table->string('title_bn')->nullable()->default('Mr.Default User');
+            $table->string('title_en')->nullable()->default('Mr.Default User');
             $table->string('contact')->nullable()->default('017********');
             $table->string('email')->nullable()->default('default_user@gmail.com');
             $table->string('address_en')->nullable()->default('default address,Dhaka, Bangladesh ');
