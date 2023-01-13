@@ -61,6 +61,8 @@ class UserController extends Controller
             'contact' => 'required|max:255',
             'address_en' => 'required',
             'address_bn' => 'required',
+            'title_en' => 'required',
+            'title_bn' => 'required',
             'center_id' => 'required',
         ]);
 
@@ -71,6 +73,8 @@ class UserController extends Controller
             'contact' => $request->contact,
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,
+            'title_en' => $request->title_en,
+            'title_bn' => $request->title_bn,
             'center_id' => $request->center_id,
             'status' => $request->status,
             'password' => Hash::make($request['password']),
@@ -127,6 +131,8 @@ class UserController extends Controller
             'contact' => 'required',
             'address_en' => 'required',
             'address_bn' => 'required',
+            'title_en' => 'required',
+            'title_bn' => 'required',
             'center_id' => 'required',
         ]);
 
@@ -137,6 +143,8 @@ class UserController extends Controller
             'contact' => $request->contact,
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,
+            'title_en' => $request->title_en,
+            'title_bn' => $request->title_bn,
             'center_id' => $request->center_id,
             'status' => $request->status,
             'password' => Hash::make($request['password']),

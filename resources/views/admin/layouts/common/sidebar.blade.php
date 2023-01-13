@@ -97,6 +97,14 @@
                     <span class="m-menu__link-text">Register Murid</span>
                 </a>
             </li>
+
+            <li class="m-menu__item  {{  (Request::is('admin/profile') || Request::is('admin/profile/*')) }} " aria-haspopup="true">
+                <a href="{{route('admin.adminProfile') }}" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <span class="m-menu__link-text">Account Settings</span>
+                </a>
+            </li>
         </ul>
     </div>
 

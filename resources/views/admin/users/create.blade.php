@@ -40,6 +40,24 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="form-group  m-form__group {{ $errors->has('title_en') ? 'has-danger' : '' }}">
+                            <label class="form-control-label"><span class="text-danger">*</span> Title En </label>
+                            <input type="text" class="form-control m-input" name="title_en" value="{{ old('title_en') }}" required placeholder="Title English"/>
+                            @if ($errors->has('title_en'))
+                                <div class="form-control-feedback">{{ $errors->first('title_en') }}</div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="form-group  m-form__group {{ $errors->has('title_bn') ? 'has-danger' : '' }}">
+                            <label class="form-control-label"><span class="text-danger">*</span> Title Bn </label>
+                            <input type="text" class="form-control m-input" name="title_bn" value="{{ old('title_bn') }}" required placeholder=" Title Bangl"/>
+                            @if ($errors->has('title_bn'))
+                                <div class="form-control-feedback">{{ $errors->first('title_bn') }}</div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('center_id') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span>Center</label>
                             <select class="form-control m-bootstrap-select m_selectpicker" name="center_id" data-live-search="true">

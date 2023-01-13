@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         DB::table('users')->insert([
             'code' => '1000',
-            'name' => '',
-            'email' =>'admin'.'@gmail.com',
+//            'name' => '',
+            'email' =>'user'.'@gmail.com',
             'address_en' =>'default address',
             'address_bn' =>'default address',
             'title_bn' =>'default title',

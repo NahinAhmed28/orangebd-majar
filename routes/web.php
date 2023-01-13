@@ -44,6 +44,7 @@ Route::prefix('admin')->name('admin.')->middleware(['adminauth'])->group( functi
     Route::resource('admin', AdminController::class);
     Route::resource('userType', UserTypeController::class);
     Route::resource('user', UserController::class);
+    Route::get('/profile', [AdminController::class, 'adminProfile'])->name('adminProfile');
 });
 
 
