@@ -35,6 +35,8 @@ class AdminController extends Controller
 
         $data = [
             'admin' => auth()->guard('admin')->user(),
+            'centers' =>Center::where('status', 1)->get(),
+            'usertypes' =>UserType::where('status', 1)->get(),
             'pageTitle' => 'Admin List',
         ];
 
