@@ -104,8 +104,8 @@
 
                                                 <div class="m-card-user m-card-user--skin-light">
                                                     <div class="m-card-user__pic">
-                                                        @php $imagePath = isset(Auth::user()->user_image) ? Auth::user()->user_image : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'; @endphp
-                                                        <img class="m--img-rounded m--marginless" src="https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg" alt="User image">
+{{--                                                        @php $imagePath = isset($admin->image) ?  asset('assets/uploads/admin/'.$admin->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'; @endphp--}}
+                                                        <img class="m--img-rounded m--marginless" src="{{isset($admin->image) ?  asset('assets/uploads/admin/'.$admin->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'}}" alt="User image">
                                                     </div>
 
                                                     <div class="m-card-user__details">

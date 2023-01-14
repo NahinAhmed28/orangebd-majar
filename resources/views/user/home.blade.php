@@ -29,17 +29,17 @@
             <div class="card-body">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
-                             Image: <br>
-                             Code: {{$user->code}} <br>
-                             Name: {{$user->name}} <br>
+                             Image: <img class="m--img-rounded m--marginless" src="{{isset($user->image) ?  asset('assets/uploads/admin/'.$user->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'}}" alt="User image"> <br>
                     </div>
                     <div class="col-md-8">
-                         Title En: {{$user->title_en}} <br>
-                         Title Bn: {{$user->title_bn}} <br>
-                         Email: {{$user->email}} <br>
-                         Contact: {{$user->contact}} <br>
-                         Address En: {{$user->address_en}} <br>
-                         Address Bn: {{$user->address_bn}} <br>
+                        Code: {{$user->code ?? 'None'}} <br>
+                        Name: {{$user->name ?? 'None'}} <br>
+                         Title En: {{$user->title_en ?? 'None'}} <br>
+                         Title Bn: {{$user->title_bn ?? 'None'}} <br>
+                         Email: {{$user->email ?? 'None'}} <br>
+                         Contact: {{$user->contact ?? 'None'}} <br>
+                         Address En: {{$user->address_en ?? 'None'}} <br>
+                         Address Bn: {{$user->address_bn ?? 'None'}} <br>
                          Status: {{$user->status == 1 ? 'Active' : 'Inactive'}} <br>
                     </div>
                 </div>

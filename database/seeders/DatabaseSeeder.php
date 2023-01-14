@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'address_bn' =>'default address',
             'title_bn' =>'default title',
             'title_en' =>'default title',
-            'image' =>'default.jpg',
+//            'image' =>'default.jpg',
             'password' =>Hash::make('password'),
             'email_verified_at' => now(),
             'created_at'=>	now(),

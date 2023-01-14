@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('code')->nullable()->default('1001');
             $table->unsignedInteger('center_id')->nullable()->index('users_fk_center_id');
             $table->string('name')->nullable();
-            $table->string('image')->nullable()->default('default.jpg');
+            $table->string('image')->nullable();
             $table->string('title_bn')->nullable()->default('Mr.Default User');
             $table->string('title_en')->nullable()->default('Mr.Default User');
             $table->string('contact')->nullable()->default('017********');
