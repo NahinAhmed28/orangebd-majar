@@ -28,6 +28,7 @@ class AdminsTableSeeder extends Seeder
                     'email' => 'admin'.'@gmail'.'.com',
                     'title_en' => 'title_en',
                     'title_bn' =>'title_bn',
+                    'image' =>'default.jpg',
                     'contact' => 'contact',
                     'address_en' => 'address_en',
                     'address_bn' => 'address_bn',

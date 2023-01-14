@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('code')->nullable()->unique();
             $table->string('title_bn')->nullable();
             $table->string('title_en')->nullable();
+            $table->string('image')->nullable()->default('default.jpg');
             $table->mediumText('address_bn')->nullable();
             $table->mediumText('address_en')->nullable();
             $table->string('contact',13)->nullable()->default('01*********');
