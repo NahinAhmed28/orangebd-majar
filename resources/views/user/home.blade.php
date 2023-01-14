@@ -34,6 +34,7 @@
                     <div class="col-md-8">
                         Code: {{$user->code ?? 'None'}} <br>
                         Name: {{$user->name ?? 'None'}} <br>
+                        Center: {{$user->center->title_en ?? 'None'}} <br>
                          Title En: {{$user->title_en ?? 'None'}} <br>
                          Title Bn: {{$user->title_bn ?? 'None'}} <br>
                          Email: {{$user->email ?? 'None'}} <br>
