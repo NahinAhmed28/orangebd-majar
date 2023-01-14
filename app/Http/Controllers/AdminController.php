@@ -29,11 +29,13 @@ class AdminController extends Controller
     public function dashboard(){
         return view('admin.layouts.default');
     }
+
     public function adminProfile(){
         $data = [
-            'admins' => Admin::get()->toQuery()->paginate(50),
+            'admin' =>auth()->user(),
             'pageTitle' => 'Admin List',
         ];
+        
         return view('admin.admins.profile', $data);
     }
 
