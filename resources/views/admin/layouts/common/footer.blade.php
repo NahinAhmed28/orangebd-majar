@@ -3,8 +3,8 @@
         <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
             <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
 							<span class="m-footer__copyright">
-								{{date('Y')}} Copyright © 2020 Mcc, All rights reserved
-                                <a href="https://mcc.com.bd/" class="m-link"> Visit us mcc.com.bd</a>
+{{--								{{date('Y')}} Copyright ©  --}}
+{{--                                <a href="https://mcc.com.bd/" class="m-link"> Visit us mcc.com.bd</a>--}}
 							</span>
             </div>
             <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
