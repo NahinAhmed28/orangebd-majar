@@ -14,6 +14,20 @@ class Admin extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     protected $guarded =['id'];
 
+//        protected $fillable = [
+//        'username',
+//        'email',
+//        'password',
+//        'center_id',
+//        'title_en',
+//        'title_bn',
+//        'address_en',
+//        'address_bn',
+//        'center_id',
+//        'usertype_id',
+//        'code',
+//    ];
+
     public function center(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Center::class);

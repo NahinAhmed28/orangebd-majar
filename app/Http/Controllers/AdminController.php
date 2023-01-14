@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Center;
 use App\Models\UserType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -31,12 +32,13 @@ class AdminController extends Controller
     }
 
     public function adminProfile(){
+
         $data = [
-            'admin' => auth()->user(),
+            'admin' => auth()->guard('admin')->user(),
             'pageTitle' => 'Admin List',
         ];
 
-        dd($data);
+//        dd($data);
 
         return view('admin.admins.profile', $data);
     }
