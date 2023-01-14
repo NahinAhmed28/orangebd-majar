@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-//            'user' => User::auth()->user()->get(),
+            'user' => auth()->user(),
             'pageTitle' => 'Murid Profile',
         ];
         return view('user.home', $data);
