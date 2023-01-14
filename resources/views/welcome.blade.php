@@ -27,19 +27,25 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">
+                            <img src="{{ asset('assets/images/home.jpg')}}" style="max-width: 300px" class="img-fluid" alt="">
+                            <br> Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">
+                            <img src="{{ asset('assets/images/user_login.jpg')}}" style="max-width: 300px" class="img-fluid" alt="">
+                            <br> Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">
+                                <img src="{{ asset('assets/images/registration.jpg')}}" style="max-width: 300px" class="img-fluid" alt="">
+                              <br>  Register</a>
                         @endif
                     @endauth
-                        <a href="{{ route('adminLogin') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Admin login</a>
+                        <a href="{{ route('adminLogin') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">
+                            <img src="{{ asset('assets/images/admin_login.jpg')}}" style="max-width: 300px" class="img-fluid" alt="">
+                            <br> Admin login</a>
                 </div>
             @endif
-
-
         </div>
     </body>
 </html>
