@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -27,7 +28,7 @@ return new class extends Migration
             $table->string('username')->unique()->nullable();
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable()->default('$2y$10$Gkvr53MZBrPViW8jKqjq/.3wW7pnzUDZZ61qHUBHh62gCzICJB7We');
+            $table->string('password')->nullable()->default(Hash::make('password'));
             $table->rememberToken();
             $table->tinyInteger('status')->default(1);
             $table->integer('created_by')->nullable();
