@@ -32,10 +32,12 @@ class AdminController extends Controller
 
     public function adminProfile(){
         $data = [
-            'admin' =>auth()->user(),
+            'admin' => auth()->user(),
             'pageTitle' => 'Admin List',
         ];
-        
+
+        dd($data);
+
         return view('admin.admins.profile', $data);
     }
 
@@ -94,7 +96,7 @@ class AdminController extends Controller
             'email_verified_at' => now(),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Admin added successfully.');
     }
 
     /**
@@ -161,7 +163,7 @@ class AdminController extends Controller
         ]);
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Admin updated successfully.');
     }
 
     /**
@@ -173,6 +175,6 @@ class AdminController extends Controller
     public function destroy($id)
     {
         Admin::destroy($id);
-        return redirect()->back();
+        return redirect()->back()->with('success','Admin deleted successfully.');
     }
 }

@@ -79,7 +79,7 @@ class CenterController extends Controller
             'upazila_id' => $request->upazila_id,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Center created successfully.');
     }
 
     /**
@@ -151,7 +151,7 @@ class CenterController extends Controller
         ]);
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Center updated successfully.');
     }
 
     /**
@@ -163,6 +163,6 @@ class CenterController extends Controller
     public function destroy($id)
     {
         Center::destroy($id);
-        return redirect()->back();
+        return redirect()->back()->with('success','Center deleted successfully.');
     }
 }

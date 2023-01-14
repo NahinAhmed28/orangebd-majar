@@ -96,7 +96,7 @@ class UserController extends Controller
             'email_verified_at' => now(),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','User added successfully.');
     }
 
     /**
@@ -186,7 +186,8 @@ class UserController extends Controller
         ]);
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success','User updated successfully.');
+
     }
 
     /**
@@ -198,6 +199,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect()->back();
+        return redirect()->back()->with('success','User deleted successfully.');
     }
 }

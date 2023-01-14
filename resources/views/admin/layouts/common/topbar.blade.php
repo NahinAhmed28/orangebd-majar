@@ -140,10 +140,10 @@
                                                         <li class="m-nav__separator m-nav__separator--fit">
                                                         </li>
                                                         <li class="m-nav__item">
-                                                            <a href="{{ route('logout') }}" class="btn m-btn--pill btn-block btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder"
+                                                            <a href="{{ route('adminLogout') }}" class="btn m-btn--pill btn-block btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder"
                                                                onclick="event.preventDefault();
                                                                document.getElementById('logout-form').submit();">Logout</a>
-                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                            <form id="logout-form" action="{{ route('adminLogout') }}" method="POST" style="display: none;">
                                                                 @csrf
                                                             </form>
                                                         </li>

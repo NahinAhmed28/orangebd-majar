@@ -30,6 +30,7 @@ Route::get('/', function () {
 
 Route::get('/admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
 Route::post('/admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+Route::post('/admin/logout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

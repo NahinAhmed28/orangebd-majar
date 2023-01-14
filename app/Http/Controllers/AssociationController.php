@@ -68,7 +68,7 @@ class AssociationController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Association created successfully.');
     }
 
     /**
@@ -120,7 +120,7 @@ class AssociationController extends Controller
         ]);
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Association updated successfully.');
     }
 
     /**
@@ -132,6 +132,6 @@ class AssociationController extends Controller
     public function destroy($id)
     {
         Association::destroy($id);
-        return redirect()->back();
+        return redirect()->back()->with('success','Association deleted successfully.');
     }
 }
