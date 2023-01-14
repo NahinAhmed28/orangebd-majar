@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [
+            'user' => User::auth()->user()->get(),
+            'pageTitle' => 'Murid Profile',
+        ];
+        return view('user.home', $data);
+
     }
 }
