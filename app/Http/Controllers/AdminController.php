@@ -8,6 +8,7 @@ use App\Models\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 
 class AdminController extends Controller
 {
@@ -84,6 +85,18 @@ class AdminController extends Controller
             'title_bn' =>  'required',
         ]);
 
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'admin' . time() . '.' . $image->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/admins')) {
+                mkdir('assets/uploads/admins', 0777, true);
+            }
+            $image->move('assets/uploads/admins', $imageFileName);
+            Image::make('assets/uploads/admins/'.$imageFileName)->resize(400,400)->save('assets/uploads/admin/'.$imageFileName);
+        } else {
+            $imageFileName = 'default_logo.png';
+        }
+
         $data = Admin::create([
             'code' => $request->code,
             'username' => $request->username,
@@ -98,6 +111,7 @@ class AdminController extends Controller
             'status' => $request->status,
             'password' => Hash::make($request['password']),
             'email_verified_at' => now(),
+            'image' => $imageFileName,
         ]);
 
         return redirect()->back()->with('success','Admin added successfully.');
@@ -141,6 +155,24 @@ class AdminController extends Controller
      */
     public function update(Request $request, Admin $admin)
     {
+        $adminImageFileName = $admin->image;
+        if ($request->hasFile('image')){
+            $adminImage = $request->file('image');
+            $adminImageFileName = 'admin'.time() . '.' . $adminImage->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/admins')){
+                mkdir('assets/uploads/admins', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/admins/'.$admin->image) and $admin->image != 'default.png'){
+                unlink('assets/uploads/admins/'.$admin->image);
+            }
+            $adminImage->move('assets/uploads/admins', $adminImageFileName);
+            Image::make('assets/uploads/admins/'.$adminImageFileName)->resize(1000,800)->save('assets/uploads/admins/'.$adminImageFileName);
+        }
+
         $request->validate([
             'username' => 'required',
             'code' => 'required',
@@ -164,6 +196,7 @@ class AdminController extends Controller
             'status' => $request->status,
             'password' => Hash::make($request['password']),
             'email_verified_at' => now(),
+            'image' => $adminImageFileName,
         ]);
 
 

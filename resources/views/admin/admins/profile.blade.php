@@ -26,9 +26,9 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="form-group  m-form__group {{ $errors->has('username') ? 'has-danger' : '' }}">
-                    <label class="form-control-label"><span class="text-danger">*</span> Name </label>
+                    <label class="form-control-label"><span class="text-danger">*</span> User Name </label>
                     <input type="text" class="form-control m-input" name="username"
-                           value="{{ old('username', $admin->username) }}" placeholder="Category Name"/>
+                           value="{{ old('username', $admin->username) }}" placeholder="User Name"/>
                     @if ($errors->has('username'))
                         <div class="form-control-feedback">{{ $errors->first('username') }}</div>
                     @endif
@@ -41,6 +41,15 @@
                     <input type="text" class="form-control m-input" name="code" value="{{ old('code', $admin->code) }}" required placeholder="Code"/>
                     @if ($errors->has('code'))
                         <div class="form-control-feedback">{{ $errors->first('code') }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="form-group  m-form__group {{ $errors->has('image') ? 'has-danger' : '' }}">
+                    <label class="form-control-label"><span class="text-danger">*</span> Image </label>
+                    <input type="file" class="form-control m-input" name="image" value="{{ old('image', $admin->image) }}" required placeholder="Image"/>
+                    @if ($errors->has('image'))
+                        <div class="form-control-feedback">{{ $errors->first('image') }}</div>
                     @endif
                 </div>
             </div>

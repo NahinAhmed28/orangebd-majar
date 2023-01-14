@@ -22,8 +22,8 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('username') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Name </label>
-                            <input type="text" class="form-control m-input" name="username" value="{{ old('username') }}" required placeholder="Admin Name"/>
+                            <label class="form-control-label"><span class="text-danger">*</span>User Name </label>
+                            <input type="text" class="form-control m-input" name="username" value="{{ old('username') }}" required placeholder="Admin User Name"/>
                                 @if ($errors->has('username'))
                                     <div class="form-control-feedback">{{ $errors->first('username') }}</div>
                                 @endif

@@ -69,12 +69,12 @@ class UserController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imageFileName = 'gallery' . time() . '.' . $image->getClientOriginalExtension();
+            $imageFileName = 'user' . time() . '.' . $image->getClientOriginalExtension();
             if (!file_exists('assets/uploads/users')) {
                 mkdir('assets/uploads/users', 0777, true);
             }
             $image->move('assets/uploads/users', $imageFileName);
-            Image::make('assets/uploads/users/'.$imageFileName)->resize(400,400)->save('assets/uploads/gallery/'.$imageFileName);
+            Image::make('assets/uploads/users/'.$imageFileName)->resize(400,400)->save('assets/uploads/user/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
