@@ -58,8 +58,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <a href="{{ url('/home') }}" >
-                                    <img src="{{ asset('assets/images/home.jpg')}}" style="max-width: 200px;min-height: 220px" class="img-fluid" alt="">
-                                    <p class="text-center">Home</p>
+                                    <img src="{{ asset('assets/images/profile.jpg')}}" style="max-width: 200px;min-height: 220px" class="img-fluid" alt="">
+                                    <p class="text-center">Profile</p>
                                 </a>
                             </div>
                         </div>
