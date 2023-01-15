@@ -114,13 +114,13 @@
                         <div class="row mb-3">
                             <label for="contact" class="col-md-4 col-form-label text-md-end">Center</label>
 
-{{--                            <select class="form-control m-bootstrap-select m_selectpicker" name="center_id" data-live-search="true">--}}
-{{--                                <option value="">---- Select ----</option>--}}
-{{--                                @foreach($centers as $center)--}}
-{{--                                    <option value="{{$center->id}}"--}}
-{{--                                        {{$center->id == old('center_id') ? 'selected' : ''}}>{{$center->title_en}}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
+                            <select class="form-control m-bootstrap-select m_selectpicker" name="center_id" data-live-search="true">
+                                <option value="">---- Select ----</option>
+                                @foreach($centers as $center)
+                                    <option value="{{$center->id}}"
+                                        {{$center->id == old('center_id') ? 'selected' : ''}}>{{$center->title_en}}</option>
+                                @endforeach
+                            </select>
 
                             <div class="col-md-6">
                                 <input id="contact" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact" autofocus>
