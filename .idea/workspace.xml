@@ -182,7 +182,7 @@
       <workItem from="1673413222480" duration="18287000" />
       <workItem from="1673505887448" duration="10085000" />
       <workItem from="1673518151220" duration="3418000" />
-      <workItem from="1673758501513" duration="12040000" />
+      <workItem from="1673758501513" duration="13013000" />
     </task>
     <task id="LOCAL-00001" summary="association controller completed">
       <created>1673414415592</created>
@@ -429,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673776488166</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="all controller name field updated with code field">
+      <created>1673776889733</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1673776889733</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
