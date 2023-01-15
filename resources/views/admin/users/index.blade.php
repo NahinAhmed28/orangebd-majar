@@ -26,6 +26,8 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Name</th>
+                                            <th>Title en</th>
+                                            <th>Title bn</th>
                                             <th>Contact</th>
                                             <th>Email</th>
                                             <th>Address en</th>
@@ -38,11 +40,13 @@
                                         @foreach($users as $user)
                                             <tr>
                                                 <td>{{$user->id}}</td>
-                                                <td>{{$user->name}}</td>
-                                                <td>{{$user->contact}}</td>
-                                                <td>{{$user->email}}</td>
-                                                <td>{{$user->address_en}}</td>
-                                                <td>{{$user->address_bn}}</td>
+                                                <td>{{$user->name ?? 'None'}}</td>
+                                                <td>{{$user->title_en ?? 'None'}}</td>
+                                                <td>{{$user->title_bn ?? 'None'}}</td>
+                                                <td>{{$user->contact ?? 'None'}}</td>
+                                                <td>{{$user->email ?? 'None'}}</td>
+                                                <td>{{$user->address_en ?? 'None'}}</td>
+                                                <td>{{$user->address_bn ?? 'None'}}</td>
                                                 <td>{{ $user->status == 1 ? 'Active' : 'Inactive' }}</td>
 
                                                 <td>

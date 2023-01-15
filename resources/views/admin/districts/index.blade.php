@@ -36,8 +36,8 @@
                                             @foreach($districts as $district)
                                                 <tr>
                                                     <td>{{$district->id}}</td>
-                                                    <td>{{$district->title_en}}</td>
-                                                    <td>{{$district->division->title_en}}</td>
+                                                    <td>{{$district->title_en ?? 'None'}}</td>
+                                                    <td>{{$district->division->title_en ?? 'None'}}</td>
                                                     <td>{{ $district->status == 1 ? 'Active' : 'Inactive' }}</td>
 
 {{--                                                    <td>--}}

@@ -36,8 +36,8 @@
                                             @foreach($divisions as $division)
                                                 <tr>
                                                     <td>{{$division->id}}</td>
-                                                    <td>{{$division->title_en}}</td>
-                                                    <td>{{$division->title_bn}}</td>
+                                                    <td>{{$division->title_en ?? 'None'}}</td>
+                                                    <td>{{$division->title_bn ?? 'None'}}</td>
                                                     <td>{{ $division->status == 1 ? 'Active' : 'Inactive' }}</td>
 
 {{--                                                    <td>--}}

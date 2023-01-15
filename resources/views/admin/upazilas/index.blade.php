@@ -37,9 +37,9 @@
                                             @foreach($upazilas as $upazila)
                                                 <tr>
                                                     <td>{{$upazila->id}}</td>
-                                                    <td>{{$upazila->title_en}}</td>
-                                                    <td>{{$upazila->district->division->title_en}}</td>
-                                                    <td>{{$upazila->district->title_en}}</td>
+                                                    <td>{{$upazila->title_en ?? 'None'}}</td>
+                                                    <td>{{$upazila->district->division->title_en ?? 'None'}}</td>
+                                                    <td>{{$upazila->district->title_en ?? 'None'}}</td>
                                                     <td>{{ $upazila->status == 1 ? 'Active' : 'Inactive' }}</td>
 
 {{--                                                    <td>--}}
