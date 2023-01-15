@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ce182d0-a03b-4492-8caf-62fc600284e2" name="Changes" comment="admin controller code field updated" />
+    <list default="true" id="2ce182d0-a03b-4492-8caf-62fc600284e2" name="Changes" comment="user controller code field updated for register">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CenterController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +185,7 @@
       <workItem from="1673413222480" duration="18287000" />
       <workItem from="1673505887448" duration="10085000" />
       <workItem from="1673518151220" duration="3418000" />
-      <workItem from="1673758501513" duration="9269000" />
+      <workItem from="1673758501513" duration="9777000" />
     </task>
     <task id="LOCAL-00001" summary="association controller completed">
       <created>1673414415592</created>
@@ -394,7 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673769568890</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="user controller code field updated">
+      <created>1673769956364</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1673769956364</updated>
+    </task>
+    <task id="LOCAL-00032" summary="user controller code field updated for register">
+      <created>1673770114743</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1673770114743</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +446,9 @@
     <MESSAGE value="admin controller" />
     <MESSAGE value="center controller code field updated" />
     <MESSAGE value="admin controller code field updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin controller code field updated" />
+    <MESSAGE value="user controller code field updated" />
+    <MESSAGE value="user controller code field updated for register" />
+    <option name="LAST_COMMIT_MESSAGE" value="user controller code field updated for register" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

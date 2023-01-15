@@ -73,9 +73,9 @@ class CenterController extends Controller
 
         if (!$request->code) {
             if ($center) {
-                $data['code'] = (str_pad(($center->code + 1), 3, '0', STR_PAD_LEFT));
+                $data['code'] =$center->code + 1;
             } else {
-                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+                $data['code'] = 1;
             }
         }
 
