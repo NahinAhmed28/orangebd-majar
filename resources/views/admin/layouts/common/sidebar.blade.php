@@ -13,7 +13,7 @@
             <li class="m-menu__item  {{ Request::is('admin/dashboard') ? 'm-menu__item--active' : '' }} " aria-haspopup="true">
                 <a href="{{route('admin.dashboard') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <i class="m-menu__link-icon fas flaticon-dashboard"></i>
                     <span class="m-menu__link-text">Dashboard</span>
                 </a>
             </li>
@@ -26,7 +26,7 @@
                 " aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-procedures"></i>
+                    <i class="m-menu__link-icon fas fa-location-arrow"></i>
                     <span class="m-menu__link-text">Locations </span>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
@@ -69,7 +69,7 @@
             <li class="m-menu__item  {{  (Request::is('admin/association') || Request::is('admin/association/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.association.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <i class="m-menu__link-icon fas fa-home"></i>
                     <span class="m-menu__link-text">Associations</span>
                 </a>
             </li>
@@ -85,7 +85,7 @@
             <li class="m-menu__item  {{  (Request::is('admin/admin') || Request::is('admin/admin/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.admin.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <i class="m-menu__link-icon fas fa-user"></i>
                     <span class="m-menu__link-text">Admins</span>
                 </a>
             </li>
@@ -93,7 +93,7 @@
             <li class="m-menu__item  {{  (Request::is('admin/user') || Request::is('admin/user/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.user.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <i class="m-menu__link-icon fas fa-user-alt"></i>
                     <span class="m-menu__link-text">Register Murid</span>
                 </a>
             </li>
@@ -101,7 +101,7 @@
             <li class="m-menu__item  {{  (Request::is('admin/profile') || Request::is('admin/profile/*')) }} " aria-haspopup="true">
                 <a href="{{route('admin.adminProfile') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon fas fa-file-medical-alt"></i>
+                    <i class="m-menu__link-icon fas flaticon-settings-1"></i>
                     <span class="m-menu__link-text">Account Settings</span>
                 </a>
             </li>
