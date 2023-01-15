@@ -126,7 +126,6 @@ class UserController extends Controller
 //        dd($request->file('image'));
         $request->validate([
             'name' => 'required',
-            'code' => 'required',
             'email' =>'required',
             'contact' => 'required|max:255',
             'address_en' => 'required',
@@ -137,6 +136,21 @@ class UserController extends Controller
 //            'image' => 'required',
             'status' =>'required',
         ]);
+
+        $user = User::orderBy('id','DESC')->first();
+        $data = $request->except('_token');
+        array_walk_recursive($data, function (&$val) {
+            $val = trim($val);
+            $val = is_string($val) && $val === '' ? null : $val;
+        });
+
+        if (!$request->code) {
+            if ($user) {
+                $data['code'] = (str_pad(($user->code + 1), 3, '0', STR_PAD_LEFT));
+            } else {
+                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+            }
+        }
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -152,7 +166,7 @@ class UserController extends Controller
 
 
         $data = User::create([
-            'code' => $request->code,
+            'code' => $data['code'],
             'name' => $request->name,
             'email' => $request->email,
             'contact' => $request->contact,

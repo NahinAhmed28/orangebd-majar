@@ -11,19 +11,6 @@
                     <form method="POST" action="{{ route('userRegisterStore') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
-                            <label for="code" class="col-md-4 col-form-label text-md-end">Code</label>
-
-                            <div class="col-md-6">
-                                <input id="code" type="number" class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}" required autocomplete="code" autofocus>
-
-                                @error('code')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
