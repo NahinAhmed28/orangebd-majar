@@ -64,7 +64,7 @@ class UserController extends Controller
     {
 //        dd($request->all());
         $request->validate([
-            'name' => 'required',
+
             'email' =>'required',
             'contact' => 'required|max:255',
             'address_en' => 'required',
@@ -72,7 +72,7 @@ class UserController extends Controller
             'title_en' => 'required',
             'title_bn' => 'required',
             'center_id' => 'required',
-            'image' => 'required',
+
         ]);
 
         $user = User::orderBy('id','DESC')->first();
@@ -124,18 +124,18 @@ class UserController extends Controller
     public function userRegisterStore(Request $request)
     {
 //        dd($request->file('image'));
-        $request->validate([
-            'name' => 'required',
-            'email' =>'required',
-            'contact' => 'required|max:255',
-            'address_en' => 'required',
-            'address_bn' => 'required',
-            'title_en' => 'required',
-            'title_bn' => 'required',
-            'center_id' => 'required',
-//            'image' => 'required',
-            'status' =>'required',
-        ]);
+//        $request->validate([
+//
+//            'email' =>'required',
+//            'contact' => 'required|max:255',
+//            'address_en' => 'required',
+//            'address_bn' => 'required',
+//            'title_en' => 'required',
+//            'title_bn' => 'required',
+//            'center_id' => 'required',
+////            'image' => 'required',
+//            'status' =>'required',
+//        ]);
 
         $user = User::orderBy('id','DESC')->first();
         $data = $request->except('_token');
