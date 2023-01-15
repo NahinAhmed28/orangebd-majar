@@ -79,6 +79,7 @@ class CenterController extends Controller
             }
         }
 
+
         $data = Center::create([
             'title_en' => $request->title_en,
             'title_bn' => $request->title_bn,

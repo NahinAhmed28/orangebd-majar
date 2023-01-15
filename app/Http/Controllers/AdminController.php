@@ -74,7 +74,6 @@ class AdminController extends Controller
     {
         $request->validate([
             'username' => 'required',
-            'code' => 'required',
             'email' =>'required',
             'contact' => 'required|max:255',
             'address_en' => 'required',
@@ -84,6 +83,21 @@ class AdminController extends Controller
             'title_en' =>  'required',
             'title_bn' =>  'required',
         ]);
+
+        $admin = Admin::orderBy('id','DESC')->first();
+        $data = $request->except('_token');
+        array_walk_recursive($data, function (&$val) {
+            $val = trim($val);
+            $val = is_string($val) && $val === '' ? null : $val;
+        });
+
+        if (!$request->code) {
+            if ($admin) {
+                $data['code'] = (str_pad(($admin->code + 1), 3, '0', STR_PAD_LEFT));
+            } else {
+                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+            }
+        }
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -98,7 +112,7 @@ class AdminController extends Controller
         }
 
         $data = Admin::create([
-            'code' => $request->code,
+            'code' => $data['code'],
             'username' => $request->username,
             'email' => $request->email,
             'title_en' => $request->title_en,
@@ -175,7 +189,6 @@ class AdminController extends Controller
 
         $request->validate([
             'username' => 'required',
-            'code' => 'required',
             'email' =>'required',
             'contact' => 'required',
             'address_en' => 'required',
@@ -185,7 +198,6 @@ class AdminController extends Controller
         ]);
 
         $admin->update([
-            'code' => $request->code,
             'username' => $request->username,
             'email' => $request->email,
             'contact' => $request->contact,

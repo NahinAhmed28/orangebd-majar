@@ -29,15 +29,15 @@
                                 @endif
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('code') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Code </label>
-                            <input type="text" class="form-control m-input" name="code" value="{{ old('code') }}" required placeholder="Code"/>
-                            @if ($errors->has('code'))
-                                <div class="form-control-feedback">{{ $errors->first('code') }}</div>
-                            @endif
-                        </div>
-                    </div>
+{{--                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">--}}
+{{--                        <div class="form-group  m-form__group {{ $errors->has('code') ? 'has-danger' : '' }}">--}}
+{{--                            <label class="form-control-label"><span class="text-danger">*</span> Code </label>--}}
+{{--                            <input type="text" class="form-control m-input" name="code" value="{{ old('code') }}" required placeholder="Code"/>--}}
+{{--                            @if ($errors->has('code'))--}}
+{{--                                <div class="form-control-feedback">{{ $errors->first('code') }}</div>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('title_en') ? 'has-danger' : '' }}">
