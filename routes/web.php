@@ -26,12 +26,13 @@ use App\Http\Controllers\Admin\AdminAuthController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/admin/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
 Route::post('/admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
 Route::post('/admin/logout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');
 Route::get('/user/register', [UserController::class, 'userRegister'])->name('userRegister');
+Route::post('/user/register/store', [UserController::class, 'userRegisterStore'])->name('userRegisterStore');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

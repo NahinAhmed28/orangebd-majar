@@ -65,17 +65,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageFileName = 'user' . time() . '.' . $image->getClientOriginalExtension();
-            if (!file_exists('assets/uploads/users')) {
-                mkdir('assets/uploads/users', 0777, true);
-            }
-            $image->move('assets/uploads/users', $imageFileName);
-            Image::make('assets/uploads/users/'.$imageFileName)->resize(400,400)->save('assets/uploads/user/'.$imageFileName);
-        } else {
-            $imageFileName = 'default_logo.png';
-        }
+//        if ($request->hasFile('image')) {
+//            $image = $request->file('image');
+//            $imageFileName = 'user' . time() . '.' . $image->getClientOriginalExtension();
+//            if (!file_exists('assets/uploads/users')) {
+//                mkdir('assets/uploads/users', 0777, true);
+//            }
+//            $image->move('assets/uploads/users', $imageFileName);
+//            Image::make('assets/uploads/users/'.$imageFileName)->resize(400,400)->save('assets/uploads/user/'.$imageFileName);
+//        } else {
+//            $imageFileName = 'default_logo.png';
+//        }
 
 
         return User::create([
@@ -89,8 +89,8 @@ class RegisterController extends Controller
             'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
             'center_id' => $data['center_id'],
-            'status' => $data['status'],
-            'image' => $imageFileName,
+            'status' =>1,
+//            'image' => $imageFileName,
             'email_verified_at' => now(),
             'created_at' => now(),
             'updated_at' => now(),

@@ -8,13 +8,13 @@
                 <div class="card-header">Murid {{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('userRegisterStore') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label for="code" class="col-md-4 col-form-label text-md-end">Code</label>
 
                             <div class="col-md-6">
-                                <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}" required autocomplete="code" autofocus>
+                                <input id="code" type="number" class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}" required autocomplete="code" autofocus>
 
                                 @error('code')
                                 <span class="invalid-feedback" role="alert">
@@ -58,17 +58,13 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="image" class="col-md-4 col-form-label text-md-end">Image</label>
-
-                            <div class="col-md-6">
-                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image" autofocus>
-
-                                @error('image')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="form-group  m-form__group {{ $errors->has('image') ? 'has-danger' : '' }}">
+                                <label class="form-control-label"><span class="text-danger">*</span>image </label>
+                                <input type="file" class="form-control m-input" name="image" value="{{ old('image') }}" required placeholder="Address English"/>
+                                @if ($errors->has('image'))
+                                    <div class="form-control-feedback">{{ $errors->first('image') }}</div>
+                                @endif
                             </div>
                         </div>
 
@@ -115,7 +111,7 @@
                             <label for="contact" class="col-md-4 col-form-label text-md-end">Contact</label>
 
                             <div class="col-md-6">
-                                <input id="contact" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact" autofocus>
+                                <input id="contact" type="number" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact" autofocus>
 
                                 @error('contact')
                                 <span class="invalid-feedback" role="alert">
@@ -124,6 +120,7 @@
                                 @enderror
                             </div>
                         </div>
+
 
                         <div class="row mb-3">
                             <label for="contact" class="col-md-4 col-form-label text-md-end">Center</label>
@@ -135,15 +132,16 @@
                                         {{$center->id == old('center_id') ? 'selected' : ''}}>{{$center->title_en}}</option>
                                 @endforeach
                             </select>
+                        </div>
 
-                            <div class="col-md-6">
-                                <input id="contact" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact" autofocus>
-
-                                @error('contact')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="form-group  m-form__group {{ $errors->has('status') ? 'has-danger' : '' }}">
+                                <label class="form-control-label"><span class="text-danger">*</span> Status </label>
+                                <select class="form-control m-input" name="status" required>
+                                    <option value="">---- Select ----</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
                             </div>
                         </div>
 

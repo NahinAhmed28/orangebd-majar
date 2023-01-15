@@ -83,7 +83,7 @@ class UserController extends Controller
                 mkdir('assets/uploads/users', 0777, true);
             }
             $image->move('assets/uploads/users', $imageFileName);
-            Image::make('assets/uploads/users/'.$imageFileName)->resize(400,400)->save('assets/uploads/user/'.$imageFileName);
+            Image::make('assets/uploads/users/'.$imageFileName)->resize(600,400)->save('assets/uploads/users/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
@@ -106,6 +106,54 @@ class UserController extends Controller
         ]);
 
         return redirect()->back()->with('success','User added successfully.');
+    }
+    public function userRegisterStore(Request $request)
+    {
+//        dd($request->file('image'));
+//        $request->validate([
+//            'name' => 'required',
+//            'code' => 'required',
+//            'email' =>'required',
+//            'contact' => 'required|max:255',
+//            'address_en' => 'required',
+//            'address_bn' => 'required',
+//            'title_en' => 'required',
+//            'title_bn' => 'required',
+//            'center_id' => 'required',
+//            'image' => 'required',
+//            'status' =>'required',
+//        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'user' . time() . '.' . $image->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/users')) {
+                mkdir('assets/uploads/users', 0777, true);
+            }
+            $image->move('assets/uploads/users', $imageFileName);
+            Image::make('assets/uploads/users/'.$imageFileName)->resize(600,400)->save('assets/uploads/users/'.$imageFileName);
+        } else {
+            $imageFileName = 'default_logo.png';
+        }
+
+
+        $data = User::create([
+            'code' => $request->code,
+            'name' => $request->name,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'address_en' => $request->address_en,
+            'address_bn' => $request->address_bn,
+            'title_en' => $request->title_en,
+            'title_bn' => $request->title_bn,
+            'center_id' => $request->center_id,
+            'status' =>  $request->status,
+            'image' => $imageFileName,
+            'password' => Hash::make($request['password']),
+            'email_verified_at' => now(),
+        ]);
+
+        return redirect()->route('welcome')->with('success','User added successfully.');
     }
 
     /**
@@ -176,7 +224,7 @@ class UserController extends Controller
                 unlink('assets/uploads/users/'.$user->image);
             }
             $userImage->move('assets/uploads/users', $userImageFileName);
-            Image::make('assets/uploads/users/'.$userImageFileName)->resize(1000,800)->save('assets/uploads/users/'.$userImageFileName);
+            Image::make('assets/uploads/users/'.$userImageFileName)->resize(600,400)->save('assets/uploads/users/'.$userImageFileName);
         }
 
         $user->update([

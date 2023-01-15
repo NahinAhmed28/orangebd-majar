@@ -48,6 +48,8 @@
                             @if ($errors->has('image'))
                                 <div class="form-control-feedback">{{ $errors->first('image') }}</div>
                             @endif
+                            <img style="max-width: 200px" src="{{isset($user->image) ?  asset('assets/uploads/users/'.$user->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'}}" alt="User image"> <br>
+
                         </div>
                     </div>
 
