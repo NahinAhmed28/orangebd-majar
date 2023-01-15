@@ -26,6 +26,7 @@
                                             <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Code</th>
                                                 <th>Title EN</th>
                                                 <th>Division</th>
                                                 <th>Status</th>
@@ -36,6 +37,7 @@
                                             @foreach($districts as $district)
                                                 <tr>
                                                     <td>{{$district->id}}</td>
+                                                    <td>{{$district->code}}</td>
                                                     <td>{{$district->title_en ?? 'None'}}</td>
                                                     <td>{{$district->division->title_en ?? 'None'}}</td>
                                                     <td>{{ $district->status == 1 ? 'Active' : 'Inactive' }}</td>

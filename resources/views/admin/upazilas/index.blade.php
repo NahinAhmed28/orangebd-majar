@@ -26,6 +26,7 @@
                                             <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Code</th>
                                                 <th>Title EN</th>
                                                 <th>Division</th>
                                                 <th>District</th>
@@ -37,6 +38,7 @@
                                             @foreach($upazilas as $upazila)
                                                 <tr>
                                                     <td>{{$upazila->id}}</td>
+                                                    <td>{{$upazila->code}}</td>
                                                     <td>{{$upazila->title_en ?? 'None'}}</td>
                                                     <td>{{$upazila->district->division->title_en ?? 'None'}}</td>
                                                     <td>{{$upazila->district->title_en ?? 'None'}}</td>

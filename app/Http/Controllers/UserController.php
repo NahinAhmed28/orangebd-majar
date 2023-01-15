@@ -84,9 +84,9 @@ class UserController extends Controller
 
         if (!$request->code) {
             if ($user) {
-                $data['code'] = (str_pad(($user->code + 1), 3, '0', STR_PAD_LEFT));
+                $data['code'] = $user->code + 1;
             } else {
-                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+                $data['code'] = 10000;
             }
         }
 
@@ -105,7 +105,7 @@ class UserController extends Controller
 
         $data = User::create([
             'code' => $data['code'],
-            'name' => $request->name,
+            'name' => $data['code'],
             'email' => $request->email,
             'contact' => $request->contact,
             'address_en' => $request->address_en,
@@ -146,9 +146,9 @@ class UserController extends Controller
 
         if (!$request->code) {
             if ($user) {
-                $data['code'] = (str_pad(($user->code + 1), 3, '0', STR_PAD_LEFT));
+                $data['code'] = ($user->code + 1);
             } else {
-                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+                $data['code'] = 10000;
             }
         }
 
@@ -167,7 +167,7 @@ class UserController extends Controller
 
         $data = User::create([
             'code' => $data['code'],
-            'name' => $request->name,
+            'name' => $data['code'],
             'email' => $request->email,
             'contact' => $request->contact,
             'address_en' => $request->address_en,
@@ -225,7 +225,6 @@ class UserController extends Controller
 //        dd($request->all());
 
         $request->validate([
-            'name' => 'required',
             'email' =>'required',
             'contact' => 'required',
             'address_en' => 'required',
@@ -255,7 +254,6 @@ class UserController extends Controller
 
         $user->update([
             'image' => $userImageFileName,
-            'name' => $request->name,
             'email' => $request->email,
             'contact' => $request->contact,
             'address_en' => $request->address_en,

@@ -25,6 +25,7 @@
                                             <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Code</th>
                                                 <th>Title EN</th>
                                                 <th>Title BN</th>
                                                 <th>Status</th>
@@ -35,6 +36,7 @@
                                             @foreach($associations as $association)
                                                 <tr>
                                                     <td>{{$association->id}}</td>
+                                                    <td>{{$association->code}}</td>
                                                     <td>{{$association->title_en ?? 'None'}}</td>
                                                     <td>{{$association->title_bn ?? 'None'}}</td>
                                                     <td>{{ $association->status == 1 ? 'Active' : 'Inactive' }}</td>

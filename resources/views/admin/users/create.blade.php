@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="m-portlet__head-tools">
-                    <a href="{{ route('admin.user.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Users</a>
+                    <a href="{{ route('admin.user.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Murids</a>
             </div>
         </div>
 
@@ -29,15 +29,15 @@
 {{--                            @endif--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Name </label>
-                            <input type="text" class="form-control m-input" name="name" value="{{ old('name') }}" required placeholder="Name"/>
-                                @if ($errors->has('name'))
-                                    <div class="form-control-feedback">{{ $errors->first('name') }}</div>
-                                @endif
-                        </div>
-                    </div>
+{{--                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">--}}
+{{--                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">--}}
+{{--                            <label class="form-control-label"><span class="text-danger">*</span> Name </label>--}}
+{{--                            <input type="text" class="form-control m-input" name="name" value="{{ old('name') }}" required placeholder="Name"/>--}}
+{{--                                @if ($errors->has('name'))--}}
+{{--                                    <div class="form-control-feedback">{{ $errors->first('name') }}</div>--}}
+{{--                                @endif--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('title_en') ? 'has-danger' : '' }}">

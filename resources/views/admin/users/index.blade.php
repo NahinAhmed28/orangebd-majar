@@ -25,6 +25,7 @@
                                         <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Code</th>
                                             <th>Name</th>
                                             <th>Title en</th>
                                             <th>Title bn</th>
@@ -40,6 +41,7 @@
                                         @foreach($users as $user)
                                             <tr>
                                                 <td>{{$user->id}}</td>
+                                                <td>{{$user->code}}</td>
                                                 <td>{{$user->name ?? 'None'}}</td>
                                                 <td>{{$user->title_en ?? 'None'}}</td>
                                                 <td>{{$user->title_bn ?? 'None'}}</td>

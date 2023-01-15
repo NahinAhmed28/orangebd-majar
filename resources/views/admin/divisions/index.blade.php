@@ -26,6 +26,7 @@
                                             <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Code</th>
                                                 <th>Title EN</th>
                                                 <th>Title BN</th>
                                                 <th>Status</th>
@@ -36,6 +37,7 @@
                                             @foreach($divisions as $division)
                                                 <tr>
                                                     <td>{{$division->id}}</td>
+                                                    <td>{{$division->code}}</td>
                                                     <td>{{$division->title_en ?? 'None'}}</td>
                                                     <td>{{$division->title_bn ?? 'None'}}</td>
                                                     <td>{{ $division->status == 1 ? 'Active' : 'Inactive' }}</td>

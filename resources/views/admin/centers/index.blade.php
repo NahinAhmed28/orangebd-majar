@@ -25,6 +25,7 @@
                                         <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Code</th>
                                             <th>Title EN</th>
                                             <th>CODE</th>
                                             <th>Division</th>
@@ -41,6 +42,7 @@
                                         @foreach($centers as $center)
                                             <tr>
                                                 <td>{{$center->id}}</td>
+                                                <td>{{$center->code}}</td>
                                                 <td>{{$center->title_en ?? 'None' }}</td>
                                                 <td>{{$center->code}}</td>
                                                 <td>{{$center->division->title_en ?? 'None'}}</td>

@@ -73,7 +73,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+
             'email' =>'required',
             'contact' => 'required|max:255',
             'address_en' => 'required',
@@ -93,9 +93,9 @@ class AdminController extends Controller
 
         if (!$request->code) {
             if ($admin) {
-                $data['code'] = (str_pad(($admin->code + 1), 3, '0', STR_PAD_LEFT));
+                $data['code'] =$admin->code + 1;
             } else {
-                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+                $data['code'] = 10000;
             }
         }
 
@@ -113,7 +113,7 @@ class AdminController extends Controller
 
         $data = Admin::create([
             'code' => $data['code'],
-            'username' => $request->username,
+            'username' => $data['code'],
             'email' => $request->email,
             'title_en' => $request->title_en,
             'title_bn' => $request->title_bn,
@@ -188,7 +188,6 @@ class AdminController extends Controller
         }
 
         $request->validate([
-            'username' => 'required',
             'email' =>'required',
             'contact' => 'required',
             'address_en' => 'required',
@@ -198,7 +197,6 @@ class AdminController extends Controller
         ]);
 
         $admin->update([
-            'username' => $request->username,
             'email' => $request->email,
             'contact' => $request->contact,
             'address_en' => $request->address_en,

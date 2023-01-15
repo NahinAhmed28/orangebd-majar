@@ -32,15 +32,15 @@
 {{--                            @endif--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Name </label>
-                            <input type="text" class="form-control m-input" name="name" value="{{ old('name', $user->name) }}" required placeholder="Name"/>
-                            @if ($errors->has('name'))
-                                <div class="form-control-feedback">{{ $errors->first('name') }}</div>
-                            @endif
-                        </div>
-                    </div>
+{{--                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">--}}
+{{--                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">--}}
+{{--                            <label class="form-control-label"><span class="text-danger">*</span> Name </label>--}}
+{{--                            <input type="text" class="form-control m-input" name="name" value="{{ old('name', $user->name) }}" required placeholder="Name"/>--}}
+{{--                            @if ($errors->has('name'))--}}
+{{--                                <div class="form-control-feedback">{{ $errors->first('name') }}</div>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('image') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Image </label>
