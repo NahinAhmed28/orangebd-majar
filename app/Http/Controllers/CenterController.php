@@ -56,7 +56,6 @@ class CenterController extends Controller
             'title_en' => 'required',
             'title_bn' =>'required',
             'status' => 'required',
-            'code' => 'required',
             'address_en' => 'required',
             'address_bn' => 'required',
             'association_id' => 'required',
@@ -65,12 +64,26 @@ class CenterController extends Controller
             'upazila_id' => 'required',
         ]);
 
+        $center = Center::orderBy('id','DESC')->first();
+        $data = $request->except('_token');
+        array_walk_recursive($data, function (&$val) {
+            $val = trim($val);
+            $val = is_string($val) && $val === '' ? null : $val;
+        });
+
+        if (!$request->code) {
+            if ($center) {
+                $data['code'] = (str_pad(($center->code + 1), 3, '0', STR_PAD_LEFT));
+            } else {
+                $data['code'] = str_pad(1, 3, '0', STR_PAD_LEFT);
+            }
+        }
 
         $data = Center::create([
             'title_en' => $request->title_en,
             'title_bn' => $request->title_bn,
             'status' => $request->status,
-            'code' => $request->code,
+            'code' => $data['code'],
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,
             'association_id' => $request->association_id,
@@ -128,7 +141,6 @@ class CenterController extends Controller
             'title_en' => 'required',
             'title_bn' =>'required',
             'status' => 'required',
-            'code' => 'required',
             'address_en' => 'required',
             'address_bn' => 'required',
             'association_id' => 'required',
@@ -141,7 +153,6 @@ class CenterController extends Controller
             'title_en' => $request->title_en,
             'title_bn' => $request->title_bn,
             'status' => $request->status,
-            'code' => $request->code,
             'address_en' => $request->address_en,
             'address_bn' => $request->address_bn,
             'association_id' => $request->association_id,

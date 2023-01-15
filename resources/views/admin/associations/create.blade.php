@@ -14,7 +14,6 @@
                     <a href="{{ route('admin.association.index') }}" class="btn btn-primary m-btn m-btn--icon"><i class="fas fa-sitemap pr-2"></i>Associations</a>
             </div>
         </div>
-
         <!--begin::Form-->
         <form class="m-form m-form--fit m-form--label-align-right"  action="{{ route('admin.association.store') }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -29,7 +28,6 @@
                                 @endif
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('title_bn') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Bangla Title </label>
@@ -39,8 +37,6 @@
                             @endif
                         </div>
                     </div>
-
-
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('status') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Status </label>
@@ -51,8 +47,6 @@
                             </select>
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <div class="m-portlet__foot m-portlet__foot--fit" >
@@ -62,7 +56,6 @@
                 </div>
             </div>
         </form>
-
         <!--end::Form-->
     </div>
 @endsection
