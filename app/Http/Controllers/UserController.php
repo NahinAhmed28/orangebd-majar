@@ -110,19 +110,19 @@ class UserController extends Controller
     public function userRegisterStore(Request $request)
     {
 //        dd($request->file('image'));
-//        $request->validate([
-//            'name' => 'required',
-//            'code' => 'required',
-//            'email' =>'required',
-//            'contact' => 'required|max:255',
-//            'address_en' => 'required',
-//            'address_bn' => 'required',
-//            'title_en' => 'required',
-//            'title_bn' => 'required',
-//            'center_id' => 'required',
+        $request->validate([
+            'name' => 'required',
+            'code' => 'required',
+            'email' =>'required',
+            'contact' => 'required|max:255',
+            'address_en' => 'required',
+            'address_bn' => 'required',
+            'title_en' => 'required',
+            'title_bn' => 'required',
+            'center_id' => 'required',
 //            'image' => 'required',
-//            'status' =>'required',
-//        ]);
+            'status' =>'required',
+        ]);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
