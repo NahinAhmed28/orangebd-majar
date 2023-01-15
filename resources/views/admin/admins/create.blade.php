@@ -57,7 +57,15 @@
                             @endif
                         </div>
                     </div>
-
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="form-group  m-form__group {{ $errors->has('image') ? 'has-danger' : '' }}">
+                            <label class="form-control-label"><span class="text-danger">*</span>image </label>
+                            <input type="file" class="form-control m-input" name="image" value="{{ old('image') }}" required placeholder="Address English"/>
+                            @if ($errors->has('image'))
+                                <div class="form-control-feedback">{{ $errors->first('image') }}</div>
+                            @endif
+                        </div>
+                    </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('email') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Email </label>

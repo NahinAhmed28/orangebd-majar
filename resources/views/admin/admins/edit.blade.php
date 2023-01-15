@@ -31,15 +31,15 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div class="form-group  m-form__group {{ $errors->has('image') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Image </label>
-                            <input type="file" class="form-control m-input" name="image" value="{{ old('image', $admin->image) }}" required placeholder="Image"/>
-                            @if ($errors->has('image'))
-                                <div class="form-control-feedback">{{ $errors->first('image') }}</div>
-                            @endif
-                        </div>
-                    </div>
+{{--                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">--}}
+{{--                        <div class="form-group  m-form__group {{ $errors->has('image') ? 'has-danger' : '' }}">--}}
+{{--                            <label class="form-control-label"><span class="text-danger">*</span> Image </label>--}}
+{{--                            <input type="file" class="form-control m-input" name="image" value="{{ old('image', $admin->image) }}" required placeholder="Image"/>--}}
+{{--                            @if ($errors->has('image'))--}}
+{{--                                <div class="form-control-feedback">{{ $errors->first('image') }}</div>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('code') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Code </label>
@@ -76,7 +76,6 @@
                                 <div class="form-control-feedback">{{ $errors->first('image') }}</div>
                             @endif
                             <img style="max-width: 200px" src="{{isset($admin->image) ?  asset('assets/uploads/admins/'.$admin->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'}}" alt="User image"> <br>
-
                         </div>
                     </div>
 

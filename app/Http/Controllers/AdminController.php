@@ -92,7 +92,7 @@ class AdminController extends Controller
                 mkdir('assets/uploads/admins', 0777, true);
             }
             $image->move('assets/uploads/admins', $imageFileName);
-            Image::make('assets/uploads/admins/'.$imageFileName)->resize(400,400)->save('assets/uploads/admin/'.$imageFileName);
+            Image::make('assets/uploads/admins/'.$imageFileName)->resize(400,400)->save('assets/uploads/admins/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
