@@ -85,7 +85,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="form-group  m-form__group {{ $errors->has('contact') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Contact </label>
-                            <input type="text" class="form-control m-input" name="contact" value="{{ old('contact') }}" required placeholder="Contact"/>
+                            <input type="number" class="form-control m-input" name="contact" value="{{ old('contact') }}" required placeholder="Contact"/>
                             @if ($errors->has('contact'))
                                 <div class="form-control-feedback">{{ $errors->first('contact') }}</div>
                             @endif
