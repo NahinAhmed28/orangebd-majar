@@ -30,7 +30,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-4">
                              Image:<br>
-                        <img class="m--img-rounded m--marginless" style="max-width: 200px" src="{{isset($user->image) ?  asset('assets/uploads/user/'.$user->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'}}" alt="User image"> <br>
+                        <img class="m--img-rounded m--marginless" style="max-width: 200px" src="{{isset($user->image) ?  asset('assets/uploads/users/'.$user->image)  : 'https://png.pngtree.com/png-vector/20190625/ourmid/pngtree-business-male-user-avatar-vector-png-image_1511454.jpg'}}" alt="User image"> <br>
                     </div>
                     <div class="col-md-8">
                         Code: {{$user->code ?? 'None'}} <br>
