@@ -78,7 +78,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-body">
-                                <a href="{{ route('register') }}" >
+                                <a href="{{ route('userRegister') }}" >
                                     <img src="{{ asset('assets/images/registration.jpg')}}" style="max-width: 200px;min-height: 220px" class="img-fluid" alt="">
                                     <p class="text-center">Register</p>
                                 </a>

@@ -45,6 +45,15 @@ class UserController extends Controller
         return view('admin.users.create', $data);
     }
 
+    public function userRegister()
+    {
+        $data = [
+            'pageTitle' => 'User Create',
+            'centers' =>Center::where('status', 1)->get(),
+        ];
+        return view('user.register', $data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'address_bn' => $data['address_bn'],
             'title_en' => $data['title_en'],
             'title_bn' => $data['title_bn'],
-//            'center_id' => $data['center_id'],
+            'center_id' => $data['center_id'],
             'status' => $data['status'],
 //            'image' => $imageFileName,
             'email_verified_at' => now(),
